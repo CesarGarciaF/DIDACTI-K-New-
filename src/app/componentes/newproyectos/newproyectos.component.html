@@ -1,0 +1,395 @@
+<body>
+    <style>
+  p, select 
+  {
+    display: inline-block;
+    vertical-align: middle;
+  }
+</style>
+<img  class="regreso" [src]="'assets/banderas/back.png'" width="40" height="40" routerLink="/home/camposformativos">
+
+  <div class="fases">
+    <p>Fase:
+      <select name="fases">
+        <option>0</option>
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5</option>
+        <option>6</option>
+      </select>
+    </p>
+    </div>
+    
+    <div class="grado">
+    <p>Grado:
+      <select name="fases">
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5</option>
+        <option>6</option>
+      </select>
+    </p>
+    </div>
+    
+    <div  class="materia">
+    <p>Materia:
+      <input type="text" name="materia">
+    </p>
+    </div>
+    <br>
+
+    <div >
+    <p class="ejes">Ejes Articuladores: </p>
+    </div> 
+<div class="ejes-del-1-6">
+    <label class="casilla-uno-dos">
+      <input class="casilla-checkbox" type="checkbox">Inclusión
+    </label>
+    <br>
+    <label class="casilla-uno-dos">
+      <input class="casilla-checkbox" type="checkbox">Pensamiento crítico 
+    </label>
+    <br>
+    
+  <div class="casilla-tres-cuatro">
+    <label class="casillasowo">
+      <input class="casilla-checkbox" type="checkbox">Interculturalidad crítica
+    </label >
+    <br>
+    <label class="casillasowo">
+      <input class="casilla-checkbox" type="checkbox">Igualdad de género
+    </label>
+  </div>
+
+  <div class="casilla-cinco-seis">
+    <label class="casillasuwu">
+      <input class="casilla-checkbox" type="checkbox">Vida saludable
+    </label >
+    <br>
+    <label class="casillasuwu">
+      <input class="casilla-checkbox" type="checkbox">Artes y experiencias estéticas
+    </label>
+  </div>
+
+</div>
+  <label class="casillasiete">
+    <input class="casilla-checkbox" type="checkbox">Apropiación de las culturas a través de la lectura y la escritura
+  </label>
+<br>
+      <div class="contenedor">
+
+        <div class="campo">
+          <label class="textocampo" for="contenido"></label> 
+          <textarea class="primeros"  name="contenido" rows="4" cols="40" placeholder="Contenido:"></textarea>
+        </div>
+      
+        <div class="campointencion">
+          <label class="textointencion" for="intencion"></label>
+          <textarea class="primeros"  name="intencion" rows="4" cols="40" placeholder="Intención o propósito:"></textarea>
+        </div>
+      
+        <div class="campodialogo">
+          <label class="textodialogo" for="dialogo"></label>
+          <textarea class="primeros" name="dialogo" rows="4" cols="40" placeholder="Dialogo:"></textarea>
+        </div> 
+      
+        <div class="campoprogresion">
+          <label class="textoprogresion" for="progresion"></label>
+          <textarea class="primeros" name="progresion" rows="4" cols="40" placeholder="Progresión de aprendizaje:"></textarea>
+        </div> 
+      
+      </div>
+        <br>
+        <tr><br><br>
+  </tr>
+
+  <div class="accordion" id="accordionExample">
+    <div class="accordion-item">
+      <h2 class="accordion-header">
+        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+          Fase 1: Planeación
+        </button>
+      </h2>
+
+      <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+        <div class="accordion-body">
+
+          <p class="momento">Momento 1. Identificación</p>
+            <tr>
+              <p class="sesion">Sesiones:
+                <select name="fases">
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                  <option>5</option>
+                  <option>6</option>
+                  <option>7</option>
+                  <option>8</option>
+                  <option>9</option>
+                  <option>10+</option>
+                </select>
+              </p>
+              <td><textarea rows="4" cols="30" placeholder="       Recursos    "></textarea></td>
+              <td><textarea class="recursos" rows="4" cols="30" placeholder="           Acción"></textarea></td>
+            </tr>
+        
+            <p class="momentodos">Momento 2. Recuperación</p>
+        
+            <tr>
+              <p class="sesiondos">Sesiones:
+                  <select name="fases">
+                      <option>1</option>
+                      <option>2</option>
+                      <option>3</option>
+                      <option>4</option>
+                      <option>5</option>
+                      <option>6</option>
+                      <option>7</option>
+                      <option>8</option>
+                      <option>9</option>
+                      <option>10+</option>
+                  </select>
+                </p>
+              <td><textarea rows="4" cols="30" placeholder="         Recursos  "></textarea></td>
+              <td><textarea class="recursos" rows="4" cols="30" placeholder="    Acción         "></textarea></td>
+            </tr>
+        
+            <p class="momentotres">Momento 3. Planificación</p>
+        
+            <tr>
+              <p class="sesiontres">Sesiones:
+                  <select name="fases">
+                      <option>1</option>
+                      <option>2</option>
+                      <option>3</option>
+                      <option>4</option>
+                      <option>5</option>
+                      <option>6</option>
+                      <option>7</option>
+                      <option>8</option>
+                      <option>9</option>
+                      <option>10+</option>
+                  </select>
+                </p>
+              <td><textarea rows="4" cols="30" placeholder="        Recursos     "></textarea></td>
+              <td><textarea class="recursos" rows="4" cols="30" placeholder="        Acción   "></textarea></td>
+            </tr>
+        
+            <p class="momentocuatro">Momento 4. Acercamiento</p>
+        
+            <tr>
+              <p class="sesioncuatro">Sesiones:
+                  <select name="fases">
+                      <option>1</option>
+                      <option>2</option>
+                      <option>3</option>
+                      <option>4</option>
+                      <option>5</option>
+                      <option>6</option>
+                      <option>7</option>
+                      <option>8</option>
+                      <option>9</option>
+                      <option>10+</option>
+                  </select>
+                </p>
+              <td><textarea rows="4" cols="30" placeholder="         Recursos  "></textarea></td>
+              <td><textarea class="recursos" rows="4" cols="30" placeholder="       Acción    "></textarea></td>
+            </tr>
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <h2 class="accordion-header">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+          Fase 2: Acción
+        </button>
+      </h2>
+
+      <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+        <div class="accordion-body">
+
+          <p class="momentocinco">Momento 5. Compresión</p>
+
+          <tr>
+            <p class="sesioncinco">Sesiones:
+                <select name="fases">
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                  <option>5</option>
+                  <option>6</option>
+                  <option>7</option>
+                  <option>8</option>
+                  <option>9</option>
+                  <option>10+</option>
+                </select>
+              </p>
+            <td><textarea rows="4" cols="30" placeholder="         Recursos  "></textarea></td>
+            <td><textarea class="recursos" rows="4" cols="30" placeholder="    Acción       "></textarea></td>
+          </tr>
+        
+          <p class="momentoseis">Momento 6. Reconocimiento</p>
+        
+          <tr>
+            <p class="sesionseis">Sesiones:
+                <select name="fases">
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                  <option>5</option>
+                  <option>6</option>
+                  <option>7</option>
+                  <option>8</option>
+                  <option>9</option>
+                  <option>10+</option>
+                </select>
+              </p>
+            <td><textarea rows="4" cols="30" placeholder="        Recursos   "></textarea></td>
+            <td><textarea class="recursos" rows="4" cols="30" placeholder="           Acción"></textarea></td>
+          </tr>
+        
+          <p class="momentosiete">Momento 7. Concreción</p>
+        
+          <tr>
+            <p class="sesionsiete">Sesiones:
+                <select name="fases">
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                  <option>5</option>
+                  <option>6</option>
+                  <option>7</option>
+                  <option>8</option>
+                  <option>9</option>
+                  <option>10+</option>
+                </select>
+              </p>
+            <td><textarea rows="4" cols="30" placeholder="         Recursos "></textarea></td>
+            <td><textarea class="recursos" rows="4" cols="30" placeholder="   Acción      "></textarea></td>
+          </tr>
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <h2 class="accordion-header">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+          Fase 3: Interveción
+        </button>
+      </h2>
+      <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+        <div class="accordion-body">
+          
+          <p class="momentocho">Momento 8. Integración</p>
+
+          <tr>
+            <p class="sesionocho">Sesiones:
+                <select name="fases">
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                  <option>5</option>
+                  <option>6</option>
+                  <option>7</option>
+                  <option>8</option>
+                  <option>9</option>
+                  <option>10+</option>
+                </select>
+              </p>
+            <td><textarea rows="4" cols="30" placeholder="           Recursos"></textarea></td>
+            <td><textarea class="recursos" rows="4" cols="30" placeholder="         Acción  "></textarea></td>  
+          </tr>
+        
+          <p class="momentonueve">Momento 9. Difusión</p>
+        
+          <tr>
+            <p class="sesionueve">Sesiones:
+                <select name="fases">
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                  <option>5</option>
+                  <option>6</option>
+                  <option>7</option>
+                  <option>8</option>
+                  <option>9</option>
+                  <option>10+</option>
+                </select>
+              </p>
+            <td><textarea rows="4" cols="30" placeholder="           Recursos"></textarea></td>
+            <td><textarea class="recursos" rows="4" cols="30" placeholder="         Acción  "></textarea></td>
+          </tr>
+        
+          <p class="momentodiez">Momento 10. Consideraciones</p>
+        
+          <tr>
+            <p class="sesiondiez">Sesiones:
+                <select name="fases">
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                  <option>5</option>
+                  <option>6</option>
+                  <option>7</option>
+                  <option>8</option>
+                  <option>9</option>
+                  <option>10+</option>
+                </select>
+              </p>
+            <td><textarea rows="4" cols="30" placeholder="         Recursos  "></textarea></td>
+            <td><textarea class="recursos" rows="4" cols="30" placeholder="           Acción"></textarea></td>
+          </tr>
+        
+          <p class="momentonce">Momento 11. Avances</p>
+        
+          <tr>
+            <p class="sesionce">Sesiones:
+               <select name="fases">
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                  <option>5</option>
+                  <option>6</option>
+                  <option>7</option>
+                  <option>8</option>
+                  <option>9</option>
+                  <option>10+</option>
+                </select>
+              </p>
+            <td><textarea rows="4" cols="30" placeholder="         Recursos  "></textarea></td>
+            <td><textarea class="recursos" rows="4" cols="30" placeholder="           Acción"></textarea></td>
+          </tr> 
+        </div>
+      </div>
+    </div>
+  </div>
+  
+<br><br><br><br><br><br><br><br><br><br>
+
+<div class="observaciones">
+  <label class="textocampo" for="contenido"></label> 
+  <textarea class="observaciones"  name="contenido" rows="4" cols="40" placeholder="                                                                                                                  Observaciones:"></textarea>
+</div>
+
+<div class="ArchivoS" style="margin-top: 5px;">
+  <label for="archivo"><strong>Adjuntar:  </strong></label>
+  <input type="file" name="archivo" id="archivo">
+  </div>
+  
+  <button (click)="lenguages()" class="botonguardar" routerLink="/home/buscar">
+    Guardar
+</button>
+
+<br><br><br>

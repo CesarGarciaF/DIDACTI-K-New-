@@ -1,0 +1,24 @@
+<body>
+    <video class="videoescuela" 
+        autoplay="" muted="" loop="" playsinline="" [src]="'assets/videofondo.mp4'" data-object-fit="cover">
+    </video>
+    <form class="form" [formGroup]="registroForm" (submit)="onSubmit()" >
+        <h1><b>Inicio de Sesión</b></h1>
+
+        <label for="username"></label>
+        <input formControlName="correoElectronico" type="email" placeholder="Correo Electronico" id="username">
+
+        <label for="password"></label>
+        <input formControlName="password" type="password" placeholder="Ingresar Contraseña" id="password">
+        
+        <button class="loginboton" type="submit">
+            Iniciar Sesión
+        </button>
+        <br><br>
+        <p class="message">¿No tienes cuenta? <a routerLink="/registro"><b>Crea una cuenta</b></a></p>
+        <br><br>
+        <p class="texto1">"Se el maestro que siempre quisiste tener</p>
+        <br>
+        <p class="texto1">Adapta tus clases al modelo de inteligencia múltiples que se adadpte a tu salón. Más de 10,000 actividades en la palma de tu mano."</p>
+    </form>
+</body>

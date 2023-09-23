@@ -1,0 +1,97 @@
+.fases
+{
+  margin-left: 410px;
+}
+.formatoGrupo
+{
+  margin-top: -110px;
+  margin-left: -310px;
+}
+form
+{
+  height: 350px;
+  width: 700px;
+}
+.grado
+{
+  margin-top: 10px;
+  margin-left: 408px;
+  border-radius: 20px;
+
+}
+.materia
+{
+  margin-top: -170px;
+  margin-left: 680px;
+
+}
+.Escuela
+{
+  margin-top: 0px;
+  margin-left: 680px;
+
+}
+.campos 
+{
+  margin-left: 550px;
+  margin-top: 5px;
+}
+
+.toda
+{
+  width: 285px;
+}
+
+.todo
+{
+  margin-top: -10px;
+  height: 90px;
+  width: 250px;
+}
+.dos
+{
+  margin-top: -20px;
+  padding: 10px;
+  height: 110px;
+  width: 250px;
+}
+
+.fases select, .grado select, .campos select {
+  width: 200px;
+  padding: 5px;
+}
+
+.materia input, .Escuela input {
+  width: 200px;
+  padding: 5px;
+}
+
+.Fotos
+{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 0vh;            /* Opcional: Ajusta la altura del contenedor según tus necesidades */
+  font-family: "ArIaL", serif;
+}
+
+button {
+    width: 150px;
+    height: 70px;
+    border: 3px solid #e6ae25;
+    border-radius: 45px;
+    transition: all 0.3s;
+    cursor: pointer;
+    background: white;
+    font-size: 1.2em;
+    font-weight: 550;
+    font-family: 'Montserrat', sans-serif;
+    margin-left: 600px;
+    margin-top: -5px;
+  }
+  
+  button:hover {
+    background: #e6ae25;
+    color: white;
+    font-size: 1.5em;
+  }

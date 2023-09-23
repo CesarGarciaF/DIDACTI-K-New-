@@ -1,0 +1,76 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  },
+  "proyectos": [
+    {
+      "sesionesdos": "2",
+      "fechainicio": "2023-08-21T07:00:00.000Z",
+      "fechacierre": "2023-08-25T07:00:00.000Z",
+      "escenariodos": "Aula",
+      "ejesArt": [
+        "Intercultularidad critica",
+        "Igualdad de Genero",
+        "Vida Saludable"
+      ],
+      "objetivo": "Ju4nM",
+      "inicio": "lic",
+      "desarrollo": "willi",
+      "cierre": "didactik",
+      "recursos": "laptops",
+      "links": "\n\nwww.didacti-k.com",
+      "id": 3
+    }
+  ],
+  "grupos": [
+    {
+      "fases": "2",
+      "grado": "2",
+      "materia": "ASA",
+      "escuela": "Asi es",
+      "camposfor": "Saberes y Pensamiento Científico",
+      "id": 1
+    },
+    {
+      "fases": "2",
+      "grado": "3",
+      "materia": "SASASS",
+      "escuela": "dsd",
+      "camposfor": "De lo Humano y lo Comunitario",
+      "id": 2
+    }
+  ],
+  "actividades": [
+    {
+      "fasesact": "2",
+      "camposformacti": "Ética, naturaleza y sociedades",
+      "escenariosact": "Escuela",
+      "ejesArtiAct": [
+        "Inclusion",
+        "Pensamiento crítico",
+        "Intercultularidad critica"
+      ],
+      "objetivoact": "ds",
+      "inicioact": "dsff",
+      "desarrolloact": "df",
+      "cierreact": "fdsff",
+      "recursosact": "fsddfs",
+      "linksact": "dfsfsf",
+      "id": 1
+    }
+  ]
+}

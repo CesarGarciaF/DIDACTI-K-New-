@@ -1,0 +1,58 @@
+<div class="sidenav" [ngClass]="collapsed ? 'sidenav-collapsed':''">
+    <div class="logo-contenedor">
+        <button class="logo"(click)="toggleCollapse()">
+            <img [src]="'assets/banderas/DIDAC.png'" alt="rubik" class="amg">
+        </button>
+
+        <div class="logo-text" @fadeInOut *ngIf="collapsed">
+            <img [src]="'assets/banderas/DIDACTI.png'" alt="rubik" class="edu"></div>
+
+        <button class="btn-close" @rotate *ngIf="collapsed"(click)="closeSidenav()">
+            <i class="fal fa-times close-icon"></i>
+        </button>
+    </div>
+    <div class="scrollwrap scrollwrap_delayed">
+        <ul class="sidenav-nav">
+            <li class="sidenav-nav-item" *ngFor="let data of navData">
+                <a class="sidenav-nav-link" (click)="handleClick(data)"
+                    *ngIf="data.items && data.items.length > 0"
+                    [ngClass]="getActiveClass(data)"
+                >
+                    <i class="sidenav-link-icon" [class]="data.icon"></i>
+                    <span class="sidenav-link-text" @fadeInOut *ngIf="collapsed">
+                    {{data.label}}
+                    </span>
+                    <i *ngIf="data.items && collapsed" class="menu-collapsed-icon"
+                    [ngClass]="!data.expanded ? 'fa fa-angle-right' : 'fa fa-angle-down'"
+                    ></i>
+                    
+                </a>
+
+
+                <a class="sidenav-nav-link" 
+                    *ngIf="!data.items || (data.items && data.items.length === 0)"
+                    [routerLink]="[data.routeLink]"
+                    routerLinkActive="active"
+                    [routerLinkActiveOptions]="{exact: true}"
+                    (click)="shrikItems(data)"
+                    >
+                        <i class="sidenav-link-icon" [class]="data.icon"></i>
+                        <span class="sidenav-link-text" @fadeInOut *ngIf="collapsed">
+                            {{data.label}}
+                        </span>
+                    </a>
+
+                <div *ngIf="collapsed && data.items && data.items.length > 0">
+                    <app-sublevel-menu
+                        [data]="data"
+                        [collapsed]="collapsed"
+                        [multiple]="multiple"
+                        [expanded]="data.expanded"
+                    ></app-sublevel-menu>
+                    
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+

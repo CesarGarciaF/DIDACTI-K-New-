@@ -1,0 +1,52 @@
+<body>
+    <img class="fondopro" [src]="'assets/FONDO JPG.jpg'">
+    <form class="editaruno" [formGroup]="registroForm"
+      (submit)="onSubmit()" [class.submited] ="submitted">
+        
+        <h1><b>Registro</b></h1>
+        <div class="contenidouno">
+            <label for="Nombre"></label>
+            <input  placeholder="Nombre" 
+            formControlName="nombreCompleto">
+        
+            <label for="Apellidos"></label>
+            <input type="text" placeholder="Apellidos" 
+            formControlName="apellido">
+        
+            <label for="Correo"></label>
+            <input type="email" placeholder="Correo Electronico"
+            formControlName="correoElectronico">
+        
+            <label for="password"></label>
+            <input type="password" placeholder="Ingresar Contraseña" 
+            formControlName="password">
+        </div>
+        <div class="contenidotwo">
+            <label for="Nombre de usuario"></label>
+            <input type="text" placeholder="Nombre de usuario" 
+            formControlName="userName">
+
+            <label for="Estado"></label>
+            <input type="text" placeholder="Estado" 
+            formControlName="estado">
+
+            <label for="Pais"></label>
+            <input type="text" placeholder="Pais" 
+            formControlName="pais">
+
+            <label for="Sexo"></label>
+            <input type="text" placeholder="Sexo"
+            formControlName="sexo">
+        </div>
+        <div class="contenidotres">
+            <label for="Edad"></label>
+            <input type="text" placeholder="Edad"
+            formControlName="edad">
+        </div>
+
+        <button type="submit">
+          Guardar 
+        </button>
+      <!-- (click)="registrar()" routerLink="/login" -->
+    </form>
+</body>

@@ -1,0 +1,117 @@
+<div mat-dialog-title>
+    <h1>Fase Uno</h1>
+</div>
+<form [formGroup]="actividadesForm" (ngSubmit)="subirFormAct()" >
+    <div mat-dialog-content class="contenido">
+        <div class="primero">
+            <mat-form-field appearance="outline">
+                <mat-label>Fases</mat-label>
+                    <mat-select formControlName="fasesact">
+                        <mat-option *ngFor="let val of fasesacti" [value]="val">
+                            {{val}}
+                        </mat-option>
+                    </mat-select>
+
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Campos Formativos</mat-label>
+                    <mat-select formControlName="camposformacti">
+                        <mat-option *ngFor="let val of camposformact" [value]="val">
+                            {{val}}
+                        </mat-option>
+                    </mat-select>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <mat-label> Escenarios </mat-label>
+                <mat-select formControlName="escenariosact">
+                    <mat-option *ngFor="let val of escenariosacti" [value]="val">
+                        {{val}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+            
+        </div>
+    </div> 
+
+    <div mat-dialog-content class="contenidodos">
+        <div class="primero">
+            <mat-form-field appearance="outline" class="ejesOwO">
+                <mat-label>Ejes Articuladores</mat-label>
+                <mat-select formControlName="ejesArtiAct" multiple>
+                    <mat-option *ngFor="let eje of ejesListaAct" [value]="eje">{{eje}}</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+    </div>
+
+    <div mat-dialog-content class="contenidotres">
+        <mat-expansion-panel class="desplegable">
+            <mat-expansion-panel-header class="btndesple">
+                <mat-panel-title>Campos extras</mat-panel-title>
+                <mat-panel-description class="ejempl">Objetivo, Inicio, Desarrollo, Cierre, Recursos y Links</mat-panel-description>
+            </mat-expansion-panel-header>
+
+            <div class="primero">
+                <mat-form-field appearance="outline" class="textos">
+                    <mat-label>Objetivo</mat-label>
+                    <textarea formControlName="objetivoact"
+                    matInput placeholder="Objetivo de la Actividad">Objetivo
+                    </textarea>
+                    <!-- <mat-hint align="end">Aqui se pone el objetivo</mat-hint> -->
+                </mat-form-field>
+            </div>
+    
+            <div class="primero">
+                <mat-form-field appearance="outline" class="textos">
+                    <mat-label>Inicio</mat-label>
+                    <textarea formControlName="inicioact"
+                    matInput placeholder="Inicio de Actividad">Inicio</textarea>
+                </mat-form-field>
+            </div>
+    
+            <div class="primero">
+                <mat-form-field appearance="outline" class="textos">
+                    <mat-label>Desarollo</mat-label>
+                    <textarea formControlName="desarrolloact"
+                    matInput placeholder="Desarollo de la Actividad">Desarollo
+                    </textarea>
+                </mat-form-field>
+            </div>
+    
+            <div class="primero">
+                <mat-form-field appearance="outline" class="textos">
+                    <mat-label>Cierre</mat-label>
+                    <textarea formControlName="cierreact"
+                    matInput placeholder="Cierre de la Actividad">Cierre
+                    </textarea>
+                </mat-form-field>
+            </div>
+            
+            <div class="primero">
+                <mat-form-field appearance="outline" class="textos">
+                    <mat-label>Recursos</mat-label>
+                    <textarea formControlName="recursosact"
+                    matInput placeholder="Recursos requeridos">Recursos
+                    </textarea>
+                </mat-form-field>
+            </div>
+    
+            <div class="primero">
+                <mat-form-field appearance="outline" class="textos">
+                    <mat-label>Links</mat-label>
+                    <textarea formControlName="linksact"
+                    matInput placeholder="Link, Url, Liga...">Desarollo
+                    </textarea>
+                </mat-form-field>
+            </div>
+        </mat-expansion-panel>
+    </div>
+
+    <div mat-dialog-actions class="acciones">
+        <button mat-raised-button type="button" [mat-dialog-close]="false">Cancelar</button>
+        <button mat-raised-button color="primary" type = submit>
+            {{data ? 'Actualizar' : 'Guardar'}}
+        </button>
+    </div>
+</form>

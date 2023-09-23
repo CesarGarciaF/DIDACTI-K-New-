@@ -1,0 +1,185 @@
+@import url(https://fonts.googleapis.com/css?family=Poppins:300);
+body
+{
+    background-color: white;
+    font-family: 'calibri';
+    transition: background-color 0.3s ease;
+}
+.videoescuela
+{
+    width: 1310px; /* Ajusta el ancho según tus preferencias */
+    height: auto; /* Esto mantiene la proporción del video */
+}
+.fondopro
+{
+  width: 1310px;
+  height: 627px;
+}
+.contenidouno
+{
+  width:250px;
+}
+.contenidotwo
+{
+  margin-top: -320px;
+  margin-left: 275px;
+  width:250px;
+}
+
+.background .shape
+{
+    height: 200px;
+    width: 200px;
+    position: absolute;/*   */
+    border-radius: 50%;
+}
+
+.background
+{
+width: 430px;
+height: 520px;
+position: absolute;
+transform: translate(-50%,-50%); /*  */
+left: 50%;
+top: 50%;
+}
+.background .shape
+{
+height: 200px;
+width: 200px;
+position: absolute;/*   */
+border-radius: 50%;
+}
+
+
+
+form
+{
+  height: 600px;
+  width: 600px;
+  background-color:#85E6C5;
+  /* background-color: rgba(255,255,255,0.13);   */
+  position: absolute;
+  transform: translate(-50%,-50%);
+  top: 51.15%;
+  left: 40%;
+  border-radius: 10px;
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255,255,255,0.1);
+  box-shadow: 0 0 40px rgba(8,7,16,0.6);
+  padding: 50px 35px;
+  text-align: center;
+} 
+form *
+{
+  font-family: 'Poppins',sans-serif;          /*Los bordes de los botones*/
+  color: black;  
+  letter-spacing: 0.5px; 
+  outline: none;
+  border: none;
+}
+form h1
+{
+  font-size: 32px;
+  font-weight: 500;           /*Titulo de Registrarse*/
+  line-height: 42px;
+  text-align: center;
+  
+}
+
+label
+{
+  display: block;
+  margin-top: 30px;        /*agrandan los botones de donde ingresan la informacion*/
+  font-size: 16px;
+  font-weight: 500;
+}
+input
+{
+  display: block;
+  height: 50px;
+  width: 100%;
+  background-color: #96B6C5;
+  /* background-color: rgba(255,255,255,0.07);  Color de los botones de donde ingresan la informacion */
+  border-radius: 3px;
+  padding: 0 10px;
+  margin-top: 8px;
+  font-size: 14px;
+  font-weight: 300;
+}
+::placeholder
+{
+  color: black;                 /*Color de las letras de donde ingresan la informacion*/
+}
+
+.editaruno
+{
+  margin-left: 150px;
+}
+
+.editardos
+{
+  margin-left: 750px;
+}
+
+.paises
+{
+    margin-top: 40px;
+    background-color: transparent;
+    border: none;
+    font-size: 16px;
+}
+
+.estadosdemexico
+{
+  margin-top: 40px;
+    background-color: transparent;
+    border: none;
+    font-size: 16px;  
+}
+
+::placeholder
+{
+      color: black;                 /*Color de las letras de donde ingresan la informacion*/
+}
+  
+/* .paises {
+      background-color: transparent;
+      border: none;
+    }     */
+
+form.ng-invalid.submitted input.ng-invalid
+{
+  border-color: #b02a37;
+}
+
+table tr td:not(:last-child):hover
+{
+  cursor:pointer;
+}
+table tr td:last-child>i:hover
+{
+  cursor:pointer;
+}
+table thead th
+{
+  color:gray !important
+}
+
+.usuarioslista
+{
+  margin-left: 700px;
+}
+
+button
+{
+      margin-top: 20px;
+      width: 100%;
+      background-color: #fa8072;
+      color: white;
+      padding: 15px 0;
+      font-size: 18px;           /*Boton inicio de sesion*/
+      font-weight: 600;
+      border-radius: 5px;
+      cursor: pointer;
+}

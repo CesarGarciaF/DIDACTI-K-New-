@@ -1,0 +1,128 @@
+@import url(https://fonts.googleapis.com/css?family=Poppins:300);
+.videoescuela
+{
+  width: 1340px; /* Ajusta el ancho según tus preferencias */
+  height: auto; /* Esto mantiene la proporción del video */
+}
+
+/*   */
+
+.background
+{
+width: 430px;
+height: 520px;
+position: absolute;
+transform: translate(-50%,-50%); /*  */
+left: 50%;
+top: 50%;
+}
+.background .shape
+{
+height: 200px;
+width: 200px;
+position: absolute;/*   */
+border-radius: 50%;
+}
+
+form
+{
+  height: 630px;
+  width: 400px;
+  background-color: rgba(255,255,255,0.13);  /*Formulario*/
+  position: absolute;
+  transform: translate(-50%,-50%);
+  top: 51.15%;
+  left: 18%;
+  border-radius: 10px;
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255,255,255,0.1);
+  box-shadow: 0 0 40px rgba(8,7,16,0.6);
+  padding: 50px 35px;
+  text-align: center;
+}
+form *
+{
+  font-family: 'Poppins',sans-serif;          /*Los bordes de los botones*/
+  color: black;  
+  letter-spacing: 0.5px; 
+  outline: none;
+  border: none;
+}
+form h1
+{
+  font-size: 32px;
+  font-weight: 500;           /*Titulo de Registrarse*/
+  line-height: 42px;
+  text-align: center;
+  
+}
+
+label
+{
+  display: block;
+  margin-top: 30px;        /*agrandan los botones de donde ingresan la informacion*/
+  font-size: 16px;
+  font-weight: 500;
+}
+input
+{
+  display: block;
+  height: 50px;
+  width: 100%;
+  background-color: rgba(255,255,255,0.07);  /*Color de los botones de donde ingresan la informacion*/
+  border-radius: 3px;
+  padding: 0 10px;
+  margin-top: 8px;
+  font-size: 14px;
+  font-weight: 300;
+}
+::placeholder
+{
+  color: black;                 /*Color de las letras de donde ingresan la informacion*/
+}
+
+.editaruno
+{
+  margin-left: 150px;
+}
+
+.editardos
+{
+  margin-left: 750px;
+}
+
+.paises
+{
+    margin-top: 40px;
+    background-color: transparent;
+    border: none;
+    font-size: 16px;
+}
+
+.estadosdemexico
+{
+  margin-top: 40px;
+    background-color: transparent;
+    border: none;
+    font-size: 16px;
+}
+
+.guardare
+{
+      margin-top: 20px;
+      margin-left: 0px;
+      width: 100%;
+      background-color: #e6ae25;
+      color: white;
+      padding: 15px 0;
+      font-size: 18px;           /*Boton inicio de sesion*/
+      font-weight: 600;
+      border-radius: 5px;
+      cursor: pointer;
+}
+
+.regreso
+{
+ width: 1349px;
+ height: 618px;
+}

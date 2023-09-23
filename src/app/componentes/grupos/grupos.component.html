@@ -1,0 +1,75 @@
+<br><br><br><br><br><br><br>
+<form [formGroup]="grupoForm" (ngSubmit)="uplodadForm()">
+    <div class="formatoGrupo">
+      <div class="fases">
+        <mat-form-field class="todo" appearance="outline">
+          <mat-label>Fases</mat-label>
+              <mat-select formControlName="fases">
+                  <mat-option *ngFor="let val of sesionesproye" [value]="val">
+                      {{val}}
+                  </mat-option>
+              </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="grado">
+        <mat-form-field appearance="outline" class="todo">
+          <mat-label>Grado</mat-label>
+              <mat-select formControlName="grado">
+                  <mat-option *ngFor="let val of grado" [value]="val">
+                      {{val}}
+                  </mat-option>
+              </mat-select>
+      </mat-form-field>
+      </div>
+      
+      <div class="materia">
+        <mat-form-field appearance="outline" class="dos">
+          <mat-label>Materia</mat-label>
+          <input formControlName="materia"
+          matInput placeholder="Nombre de la materia">
+        </mat-form-field>
+      </div>
+
+      <div class="Escuela">
+        <mat-form-field appearance="outline" class="dos">
+          <mat-label>Escuela</mat-label>
+          <input formControlName="escuela"
+          matInput placeholder="Nombre de la escuela">
+        </mat-form-field>
+      </div>
+      
+      <div class="campos">
+        <mat-form-field appearance="outline" class="toda">
+          <mat-label>Campos Formativos:</mat-label>
+              <mat-select formControlName="camposfor">
+                  <mat-option *ngFor="let val of camposforma" [value]="val">
+                      {{val}}
+                  </mat-option>
+              </mat-select>
+        </mat-form-field>
+      </div>  
+        <button type="submit" routerLink="/home/perfil">
+          Guardar
+        </button>
+      </div>    
+</form>
+    
+    <br>
+    <!-- <div class="Fotos" style="margin-top: 5px;">
+        <label for="foto"><strong>Adjuntar foto de grupo: </strong></label>
+        <input accept="image/*" type="file" name="foto" id="foto">
+    </div> -->
+        
+        
+
+
+
+
+
+
+
+
+
+<!--<button routerLink="/home/perfil">
+    Regresar
+</button> -->

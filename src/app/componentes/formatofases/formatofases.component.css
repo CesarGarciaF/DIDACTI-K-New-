@@ -1,0 +1,92 @@
+.primero
+{
+    display: flex;
+    gap: 10px;
+
+    mat-form-fild
+    {
+        width: 100%;
+    }
+}
+
+.contenido
+{
+    padding-top: 10px;
+}   
+.contenidodos
+{
+    padding-top: 10px;
+    margin-left: -40px;
+    margin-top: -30px;
+}
+.contenidotres
+{
+    margin-top: -20px;
+    padding-top: 10px;
+}
+/* Aqui es solo para mover la parte de Ejes Articuladores */
+.titulodos
+{
+    margin-left: 310px;
+}
+.casilla-uno
+{
+    margin-left: 60px;
+    padding: 10px;
+}
+.casillagenero
+{
+    margin-left: 70px;
+}
+.casillasaludable
+{
+    margin-left: 38px;
+}
+.casillartes
+{
+    margin-left: 85px;
+}
+.casillasiete
+{
+    padding-top: 10px;
+    margin-left: 130px;
+}
+/* Aqui es solo para mover la parte de Ejes Articuladores */
+
+.fecha
+{
+    width: 210px;
+}
+.acciones
+{
+    padding: 0px 25px 20px;
+}
+.textos
+{
+    margin-left: 2px;
+    width: 875px;
+}
+.ejesOwO
+{
+    margin-left: 40px;
+    width: 875px;
+}
+button
+{
+    flex: 1;
+}
+/*DESPLEGABLE FASES*/
+.desplegable /*Este es el desplegable de el formulario de fases*/
+{
+    width: 875px;
+}
+.btndesple /*Este es para modificar el botón de abrir desplegable*/
+{
+    height: 60px;
+    font-size: 16px;
+}
+.ejempl /*Este es el texto de descripción del desplegable*/
+{ 
+    margin-left: 198px;
+}
+/*DESPLEGABLE FASES*/

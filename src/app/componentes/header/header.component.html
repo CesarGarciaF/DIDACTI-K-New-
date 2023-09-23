@@ -1,0 +1,118 @@
+<div class="head" [ngClass]="getHeadClass()">
+    <div class="head-content">
+        <div class="head-content-left">
+            {{Mensaje}}
+            <!--Esta era una barra de busqueda-->
+            
+            <!--
+                <div class="search-container">               
+                <div *ngIf="!canShowSearchAsOverlay" class="normal-search">
+                    <input type="search"
+                        class="search" name="" id=""
+                        placeholder="Buscar...">
+                    <i class="fa fa-search"></i>
+                    </div>                 
+                    <div *ngIf="canShowSearchAsOverlay">
+                        <button
+                        [cdkMenuTriggerFor]="searchOverlay"
+                        class="search-menu-btn ripple"
+                        >
+                        <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+                </div>
+            -->
+
+            </div>
+        <img [src]="'assets/banderas/DIDACTIK.png'" alt="Didacti-k" class="logo-didactik">
+            <div class="head-content-right">
+            <!--    <div class="head-menu">
+                    <div class="head-menu-item">
+                        <button class="head-menu-item-btn ripple" [cdkMenuTriggerFor]="languageOverlay">
+                            <img [src]="'assets/banderas/' + selectedLanguage.flag + '.png'" 
+                            class="banderas" alt="bandera">
+                        </button>
+                    </div>
+                    <div class="head-menu-item">
+                        <button class="head-menu-item-btn ripple">
+                            <i class="fa fa-sort-desc"></i>
+                        </button>
+                    </div>
+                    <div class="head-menu-item">
+                        <button class="head-menu-item-btn ripple" [cdkMenuTriggerFor]="notificacionOverlay">
+                            <i class="fa fa-bell"></i>
+                        </button>
+                    </div>
+                </div>--> 
+                
+                
+                <div class="head-usuario-avatar-container">
+                    <div class="head-usuario-avatar" [cdkMenuTriggerFor]="usuarioOverlay">
+                        <img class="tooltip" title="Editar perfil"
+                        routerLink="/editarperfil" [src]="'assets/banderas/usuarios.png'" alt="usuarios" class="usuario-avatar">
+                        <div class="circle-indicator pulse"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>      
+
+<ng-template #searchOverlay>
+    <div class="overlay overlay-search overlay-fall" cdkMenu>
+        <input type="search" class="search" name="" id="" placeholder="Search...">
+        <button class="search-btn">
+            <i class="far fa-search search-icon"></i>
+        </button>
+    </div>
+</ng-template>
+
+<ng-template #languageOverlay>
+    <div class="overlay overlay-language overlay-fall" cdkMenu>
+        <ul>
+            <li *ngFor="let lang of languages" cdkMenuItem>
+                <img [src]="'assets/banderas/' + lang.flag + '.png' " alt="flag">
+                <span>{{lang.language}}</span>
+            </li>
+        </ul>
+    </div>
+</ng-template>
+
+<ng-template #notificacionOverlay>
+    <div class = "overlay overlay-notificaciones overlay-fall" cdkMenu>
+        <ul>
+            <li class = "notificaciones-head-container">
+                <div class = "notificaciones-head">Notificación</div>
+                <span class="view-all-link" >
+                    <a>Ver todo</a>
+                </span>
+            </li>
+            <li class = "notificaciones-mensaje-container" 
+                *ngFor="let notificaciones of notificaciones"
+                cdkMenuItem
+            >
+                <i [class] = "notificaciones.icon"></i>
+                <div>
+                    <div class = "notificaciones-tema">
+                        {{notificaciones.tema}}
+                    </div>
+                    <p class = "notificaciones-descripcion">
+                        {{notificaciones.descripcion}}
+                    </p>
+                </div>
+            </li>
+        </ul>
+    </div>
+</ng-template>
+
+<ng-template #usuarioOverlay>
+    <div class = "overlay overlay-usuario overlay-fall" cdkMenu>
+        <ul>
+            <li *ngFor= "let item of usuarioItems" cdkMenuItem>
+                <a>
+                    <i class = "icon" [ngClass]="item.icon"></i>
+                    <span>{{item.label}}</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</ng-template>

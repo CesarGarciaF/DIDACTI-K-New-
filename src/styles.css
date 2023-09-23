@@ -1,1 +1,78 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
+@import '~@angular/cdk/overlay-prebuilt.css'; 
+@import '@angular/material/prebuilt-themes/indigo-pink.css';
+*
+{
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+}
+body
+{
+    position:relative;
+    font-family:'Roboto', sans-serif;
+    background: #f4f7fa;
+}
+.carta
+{
+    display: flex;
+    flex-direction: column;
+    border-radius: .5rem;
+    background-color: #fff;
+    margin: 1.25rem 0 1.5rem;
+    box-shadow: 0 .25rem .5rem #e6edef;
+    color: #495057;
+    
+    .carta-cabeza
+    {
+        color: black;
+        width: 700px;
+        padding: 1rem 1.5rem;
+        border-bottom: 1px solid #edf1f7;
+        font-size: 1rem;
+        font-weight: 600;
+    }
+    .carta-cuerpo
+    {
+        color: black;
+        background-color: #FD8A8A;
+        width: 700px;
+        padding: 1rem 1.5rem;
+    }
+    
+}
+.carta-dos
+{
+    display: flex;
+    flex-direction: column;
+    border-radius: .5rem;
+    background-color: #fff;
+    margin: 1.25rem 0 1.5rem;
+    box-shadow: 0 .25rem .5rem #e6edef;
+    color: #495057;
+
+    .carta-cabeza-dos
+    {
+        color: black;
+        position: relative; left:730px; bottom:715px;
+        width: 500px;
+        padding: 1rem 1.5rem;
+        border-bottom: 1px solid #edf1f7;
+        font-size: 1rem;
+        font-weight: 600;
+    }
+    .carta-cuerpo-dos
+    {
+        color: black;
+        font-size: 18px;
+        position: relative; left:730px; bottom:715px;
+        /*line-height: 30px;*/  /*Este sirve cómo "interlineado"*/
+        background-color: #FD8A8A;
+        width: 500px;
+        height: 230px;
+        padding: 1rem 1.5rem;
+    }
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

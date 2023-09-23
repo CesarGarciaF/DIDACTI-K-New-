@@ -1,0 +1,75 @@
+<!-- <div class="gruposyeah">
+    <div class="main-body">
+        <mat-form-field class="filtro">
+            <mat-label>Filtro</mat-label>
+            <input  matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input>  
+        </mat-form-field>
+    
+        <div class="table-container">
+            <table mat-table [dataSource]="dataSource" matSort>
+            <ng-container matColumnDef="id">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> ID </th>
+              <td mat-cell *matCellDef="let row"> {{row.id}} </td>
+            </ng-container>
+            <ng-container matColumnDef="fasesact">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header>Fases</th>
+              <td mat-cell *matCellDef="let row"> {{row.fasesact}} </td>
+            </ng-container>
+    
+            <ng-container matColumnDef="camposformacti">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header>Campos Formativos</th>
+              <td mat-cell *matCellDef="let row"> {{row.camposformacti}}</td>
+            </ng-container>
+    
+            <ng-container matColumnDef="escenariosact">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header>Escenarios</th>
+              <td mat-cell *matCellDef="let row"> {{row.escenariosact}}</td>
+            </ng-container>
+    
+            <ng-container matColumnDef="ejesArtiAct">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header>Ejes Articuladores</th>
+              <td mat-cell *matCellDef="let row"> {{row.ejesArtiAct}}</td>
+            </ng-container> 
+    
+            <ng-container matColumnDef="objetivoact">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header>Objetivo</th>
+              <td mat-cell *matCellDef="let row"> {{row.objetivoact}}</td>
+            </ng-container> 
+    
+            <ng-container matColumnDef="boton">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header>Acciones</th>
+              <td mat-cell *matCellDef="let row">
+                <button mat-icon-button color="primary" (click)="editarFormularioActividades(row)">
+                    <mat-icon>edit</mat-icon>
+                </button>
+                <button mat-icon-button color="warn" (click)="eliminarActividades(row.id)">
+                    <mat-icon>delete</mat-icon>
+                </button>
+              </td>
+            </ng-container> 
+        
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        
+            <tr class="mat-row" *matNoDataRow>
+                <td class="mat-cell" colspan="4">No hay datos para mostrar{{input.value}}</td>
+            </tr>
+            </table>
+            <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users"></mat-paginator>
+        </div>
+  </div>
+</div> -->
+  
+  <button class="tooltip" title="Crear proyectos"
+  class="proyecto" routerLink="/home/camposformativos">
+    <img [src]="'assets/banderas/proyecto.png'" 
+      width="100" height="100"> 
+      <!--<p class="proyec"><b>Proyecto+</b></p> -->
+  </button>
+
+  <button class="tooltip" title="Crear actividades"
+  class="actividades" (click)="actividadesFormulario()">
+    <img [src]="'assets/banderas/actividad.png'" 
+      width="100" height="100"> 
+      <!--<p class="activi"><b>Actividades+</b></p> -->
+  </button>
