@@ -1,6 +1,8 @@
-import React, { useState, useEffect } from "react";
+import { useNavigate, Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
-import { login } from "../services/auth.service";
+import { useAuth } from "../context/AuthContext";
+import { signupRequest } from "../services/AuthService";
+import { useState, useEffect } from "react";
 // import "./CreateForm.css";
 // import LoginService from "../services/login";
 // import { FaRegUser } from "react-icons/fa";
@@ -9,12 +11,21 @@ import { login } from "../services/auth.service";
 // import { Navigate } from "react-router-dom";
 
 export default function LoginPage() {
-  const { register, handleSubmit } = useForm();
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+  const { singin, isAuthenticated, errors: signinErrors } = useAuth();
+  const navigate = useNavigate();
 
-  const [errorMessage, setErrorMessage] = useState(null);
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
-  const [user, setUser] = useState(null);
+  useEffect(() => {
+    if (isAuthenticated) navigate("/dashboard");
+  }, [isAuthenticated]);
+
+  const onSubmit = handleSubmit(async (values) => {
+    await singin(values);
+  });
   // const auth = useAuth();
 
   // if (auth.isAuthenticated) {
@@ -54,14 +65,12 @@ export default function LoginPage() {
           <h1 className="text-xl md:text-2xl font-bold leading-tight mt-12">
             Log in to your account
           </h1>
-
-          <form
-            className="mt-6"
-            onSubmit={handleSubmit(async (values) => {
-              const res = await login(values);
-              console.log(res);
-            })}
-          >
+          {signinErrors.map((error, i) => (
+            <div className="bg-red-500 p-2 text-white" key={i}>
+              {error}
+            </div>
+          ))}
+          <form className="mt-6" onSubmit={onSubmit}>
             <div>
               <label className="block text-gray-700">Email Address</label>
               <input
@@ -71,6 +80,9 @@ export default function LoginPage() {
                 {...register("email", { required: true })}
                 className="w-full px-4 py-3 rounded-lg bg-gray-200 mt-2 border focus:border-blue-500 focus:bg-white focus:outline-none"
               />
+              {errors.username && (
+                <p className="text-red-500">El usuario es requerido</p>
+              )}
             </div>
 
             <div className="mt-4">
@@ -83,6 +95,9 @@ export default function LoginPage() {
                 className="w-full px-4 py-3 rounded-lg bg-gray-200 mt-2 border focus:border-blue-500
                 focus:bg-white focus:outline-none"
               />
+              {errors.password && (
+                <p className="text-red-500">La contraseña es requerida</p>
+              )}
             </div>
 
             <div className="text-right mt-2">
@@ -107,12 +122,12 @@ export default function LoginPage() {
 
           <p className="mt-8">
             Need an account?{" "}
-            <a
-              href="#"
+            <Link
+              to="/signup"
               className="text-blue-500 hover:text-blue-700 font-semibold"
             >
               Create an account
-            </a>
+            </Link>
           </p>
         </div>
       </div>

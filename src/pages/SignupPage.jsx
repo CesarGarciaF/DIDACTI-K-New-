@@ -1,20 +1,25 @@
+import { useNavigate, Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
-import { signup } from "../services/auth.service";
-
-// import './CreateForm.css';
-import { FaRegUser } from "react-icons/fa";
-import { MdOutlineEmail, MdLockOutline } from "react-icons/md";
-import { useAuth } from "../services/authProvider";
-import { Navigate } from "react-router-dom";
+import { useAuth } from "../context/AuthContext";
+import { signupRequest } from "../services/AuthService";
+import { useEffect } from "react";
 
 export default function SignupPage() {
-  const { register, handleSubmit } = useForm();
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+  const { signup, isAuthenticated, errors: registerErrors } = useAuth();
+  const navigate = useNavigate();
 
-  // const auth = useAuth();
+  useEffect(() => {
+    if (isAuthenticated) navigate("/dashboard");
+  }, [isAuthenticated]);
 
-  // if (auth.isAuthenticated) {
-  //     return <Navigate to="/dashboard" />
-  // }
+  const onSubmit = handleSubmit(async (values) => {
+    signup(values);
+  });
 
   return (
     <section className="flex flex-col md:flex-row h-screen items-center justify-center">
@@ -31,14 +36,12 @@ export default function SignupPage() {
           <h1 className="text-xl md:text-2xl font-bold leading-tight mt-12">
             Log in to your account
           </h1>
-
-          <form
-            className="mt-6"
-            onSubmit={handleSubmit(async (values) => {
-              const res = await signup(values);
-              console.log(res);
-            })}
-          >
+          {registerErrors.map((error, i) => (
+            <div className="bg-red-500 p-2 text-white" key={i}>
+              {error}
+            </div>
+          ))}
+          <form className="mt-6" onSubmit={onSubmit}>
             <div>
               <label className="block text-gray-700">Username</label>
               <input
@@ -48,6 +51,9 @@ export default function SignupPage() {
                 {...register("username", { required: true })}
                 className="w-full px-4 py-3 rounded-lg bg-gray-200 mt-2 border focus:border-blue-500 focus:bg-white focus:outline-none"
               />
+              {errors.username && (
+                <p className="text-red-500">El usuario es requerido</p>
+              )}
             </div>
 
             <div>
@@ -59,6 +65,9 @@ export default function SignupPage() {
                 {...register("email", { required: true })}
                 className="w-full px-4 py-3 rounded-lg bg-gray-200 mt-2 border focus:border-blue-500 focus:bg-white focus:outline-none"
               />
+              {errors.email && (
+                <p className="text-red-500">El email es requerido</p>
+              )}
             </div>
 
             <div>
@@ -71,6 +80,9 @@ export default function SignupPage() {
                 className="w-full px-4 py-3 rounded-lg bg-gray-200 mt-2 border focus:border-blue-500
                 focus:bg-white focus:outline-none"
               />
+              {errors.password && (
+                <p className="text-red-500">La contraseña es requerida</p>
+              )}
             </div>
 
             {/* <div>
@@ -106,13 +118,13 @@ export default function SignupPage() {
           <hr className="my-6 border-gray-300 w-full" />
 
           <p className="mt-8">
-            Need an account?{" "}
-            <a
-              href="#"
+            Already have an account?{" "}
+            <Link
+              to="/login"
               className="text-blue-500 hover:text-blue-700 font-semibold"
             >
-              Create an account
-            </a>
+              Login
+            </Link>
           </p>
         </div>
       </div>

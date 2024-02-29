@@ -1,8 +1,11 @@
 import React, { useState, useRef } from "react";
 import "primereact/resources/themes/bootstrap4-dark-blue/theme.css";
 import "primeicons/primeicons.css";
+import { Link } from "react-router-dom";
+import { useAuth } from "../context/AuthContext";
 
 export default function DashboardPage() {
+  const { logout } = useAuth();
   return (
     <div class="flex flex-row min-h-screen bg-gray-100 text-gray-800">
       <aside class="sidebar w-64 md:shadow transform -translate-x-full md:translate-x-0 transition-transform duration-150 ease-in bg-indigo-500">
@@ -214,8 +217,9 @@ export default function DashboardPage() {
               </a>
             </li>
             <li class="my-px">
-              <a
-                href="#"
+              <Link
+                to="/"
+                onClick={() => logout()}
                 class="flex flex-row items-center h-10 px-3 rounded-lg text-gray-300 hover:bg-gray-100 hover:text-gray-700"
               >
                 <span class="flex items-center justify-center text-lg text-red-400">
@@ -232,7 +236,7 @@ export default function DashboardPage() {
                   </svg>
                 </span>
                 <span class="ml-3">Logout</span>
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
