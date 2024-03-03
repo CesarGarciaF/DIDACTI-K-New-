@@ -8,28 +8,27 @@ const Work = () => {
   const workInfoData = [
     {
       image: PickMeals,
-      title: "Pick Meals",
-      text: "Lorem ipsum dolor sit amet consectetur. Maecenas orci et sagittis duis elementum interdum facilisi bibendum.",
+      title: "Planificación Eficiente",
+      text: "Crea planeaciones educativas de manera eficiente y rápida, optimizando tu tiempo como docente.",
     },
     {
       image: ChooseMeals,
-      title: "Choose How Often",
-      text: "Lorem ipsum dolor sit amet consectetur. Maecenas orci et ",
+      title: "Colaboración Simplicada",
+      text: "Facilitamos la colaboración entre docentes al proporcionar herramientas para la creación y compartición de recursos.",
     },
     {
       image: DeliveryMeals,
-      title: "Fast Deliveries",
-      text: "Lorem ipsum dolor sit amet consectetur. Maecenas orci et lorem ipsum",
+      title: "Actualizaciones en Tiempo Real",
+      text: "Mantente siempre al día con las últimas tendencias educativas y actualizaciones en tiempo real dentro de la plataforma.",
     },
   ];
   return (
     <div className="work-section-wrapper">
       <div className="work-section-top">
-        <p className="primary-subheading">Work</p>
-        <h1 className="primary-heading">How It Works</h1>
+        <p className="primary-subheading">Cómo Funciona</p>
+        <h1 className="primary-heading">DIDACTI-K en Acción</h1>
         <p className="primary-text">
-          Lorem ipsum dolor sit amet consectetur. Non tincidunt magna non et
-          elit. Dolor turpis molestie dui magnis facilisis at fringilla quam.
+          Simplificamos el proceso de planificación educativa para que puedas enfocarte en lo que realmente importa: la enseñanza.
         </p>
       </div>
       <div className="work-section-bottom">

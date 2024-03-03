@@ -1,9 +1,6 @@
 import React from "react";
 import AboutBackground from "../../assets/about-background.png";
-import AboutBackgroundImage from "../../assets/about-background-image.png";
-import { BsFillPlayCircleFill } from "react-icons/bs";
-import { Link } from 'react-router-dom';
-
+import PlaneacionExample from "../../assets/PlaneacionExample.png";
 const About = () => {
     return (
         <div className="about-section-container">
@@ -11,27 +8,21 @@ const About = () => {
                 <img src={AboutBackground} alt="" />
             </div>
             <div className="about-section-image-container">
-                <img src={AboutBackgroundImage} alt="" />
+                <img src={PlaneacionExample} alt="" />
             </div>
             <div className="about-section-text-container">
-                <p className="primary-subheading">About</p>
+                <p className="primary-subheading">Bienvenido a DIDACTI-K</p>
                 <h1 className="primary-heading">
-                    Food Is An Important Part Of A Balanced Diet
+                    Transformamos la Planeación Educativa para Docentes
                 </h1>
                 <p className="primary-text">
-                    Lorem ipsum dolor sit amet consectetur. Non tincidunt magna non et
-                    elit. Dolor turpis molestie dui magnis facilisis at fringilla quam.
+                    Facilitamos la creación de material didáctico para docentes, brindándoles la
+                    mejor herramienta para optimizar su tiempo y mejorar sus resultados.
                 </p>
                 <p className="primary-text">
-                    Non tincidunt magna non et elit. Dolor turpis molestie dui magnis
-                    facilisis at fringilla quam.
+                    Con DIDACTI-K, los docentes pueden centrarse en la enseñanza mientras
+                    nosotros nos encargamos de simplificar la planificación educativa.
                 </p>
-                <div className="about-buttons-container">
-                    <Link to="/signup" className="secondary-button">Learn More</Link>
-                    <Link to="/login" className="watch-video-button">
-                        <BsFillPlayCircleFill /> Watch Video
-                    </Link>
-                </div>
             </div>
         </div>
     );
