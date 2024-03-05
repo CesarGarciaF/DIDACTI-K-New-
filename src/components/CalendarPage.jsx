@@ -1,4 +1,8 @@
-import React from 'react'
+import React from 'react';
+import FullCalendar from '@fullcalendar/react';
+import dayGridPlugin from '@fullcalendar/daygrid';
+import timeGridPlugin from '@fullcalendar/timegrid';
+import interactionPlugin from '@fullcalendar/interaction';
 
 export const CalendarPage = () => {
   return (
@@ -8,7 +12,17 @@ export const CalendarPage = () => {
         <div class="main-content flex flex-col flex-grow p-4">
           <h1 class="font-bold text-2xl text-gray-700">Calendario</h1>
 
-          <div class="flex flex-col flex-grow border-4 border-gray-400 border-dashed bg-white rounded mt-4"></div>
+          <div class="flex flex-col flex-grow border-4 border-gray-400 border-dashed bg-white rounded mt-4">
+          <FullCalendar 
+              plugins={[dayGridPlugin, timeGridPlugin, interactionPlugin]}
+              initialView={"dayGridMonth"}
+              headerToolbar={{
+                left: "today prev,next",
+                center: "title",
+                end: "dayGridMonth,timeGridWeek,timeGridDay"
+              }}
+            />
+          </div>
         </div>
         <footer class="footer px-4 py-6">
           <div class="footer-content">
