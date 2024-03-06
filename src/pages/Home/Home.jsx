@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Layout, theme } from 'antd';
-import { MenuUnfoldOutlined, MenuFoldOutlined } from '@ant-design/icons';
 import Logo from './Logo';
 import MenuList from './MenuList';
 import ToggleThemeButton from './ToggleThemeButton';
@@ -22,15 +21,16 @@ function Home() {
   } = theme.useToken();
 
   return (
-    <Layout >
-<Sider
-  width={200} /* Ajusta según tus necesidades */
-  collapsed={collapsed}
-  collapsible
-  trigger={null}
-  theme={darkTheme ? 'dark' : 'light'}
-  className={`sidebar ${collapsed ? 'collapsed' : ''}`}
->        <Logo />
+    <div className="sidebar-container">
+      <Layout >
+      <Sider
+        width={200} 
+        collapsed={collapsed}
+        collapsible
+        trigger={null}
+        theme={darkTheme ? 'dark' : 'light'}
+        className={`sidebar ${collapsed ? 'collapsed' : ''}`}>
+        <Logo />
         <MenuList darkTheme={darkTheme} />
         <ToggleThemeButton darkTheme={darkTheme} toggleTheme={toggleTheme} setCollapsed={setCollapsed} collapsed={collapsed} />
       </Sider>
@@ -40,6 +40,7 @@ function Home() {
         <Outlet />
       </Layout>
     </Layout>
+    </div>
   );
 }
 
