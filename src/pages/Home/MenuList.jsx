@@ -2,6 +2,7 @@ import React from 'react';
 import { Menu } from 'antd';
 import { HomeOutlined, AppstoreOutlined, AreaChartOutlined, PayCircleOutlined, SettingOutlined, BarsOutlined } from '@ant-design/icons';
 import { Link, Outlet, Route, Routes } from "react-router-dom";
+import './Home.css';
 
 const MenuList = ({ darkTheme }) => {
     return (

@@ -3,7 +3,7 @@ import logoDidactik from '../../assets/LogoDidactik.png';
 
 const Logo = () => {
   return (
-    <div className='logo'>
+    <div className='logo all-logo'>
         <img src={logoDidactik} alt="Descripción de la imagen" />
     </div>
   );

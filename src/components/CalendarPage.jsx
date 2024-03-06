@@ -6,14 +6,13 @@ import interactionPlugin from '@fullcalendar/interaction';
 
 export const CalendarPage = () => {
   return (
-    <div class="flex flex-row min-h-screen bg-gray-100 text-gray-800">
-      <main class="main flex flex-col flex-grow -ml-64 md:ml-0 transition-all duration-150 ease-in">
-        
-        <div class="main-content flex flex-col flex-grow p-4">
-          <h1 class="font-bold text-2xl text-gray-700">Calendario</h1>
+    <div className="flex flex-row min-h-screen bg-gray-100 text-gray-800">
+      <main className="main flex flex-col flex-grow md:ml-0 transition-all duration-150 ease-in mx-auto">
+        <div className="main-content flex flex-col flex-grow p-4">
+          <h1 className="font-bold text-2xl text-gray-700">Calendario</h1>
 
-          <div class="flex flex-col flex-grow border-4 border-gray-400 border-dashed bg-white rounded mt-4">
-          <FullCalendar 
+          <div className="flex flex-col flex-grow rounded mt-4">
+            <FullCalendar
               plugins={[dayGridPlugin, timeGridPlugin, interactionPlugin]}
               initialView={"dayGridMonth"}
               headerToolbar={{
@@ -24,11 +23,10 @@ export const CalendarPage = () => {
             />
           </div>
         </div>
-        <footer class="footer px-4 py-6">
-          <div class="footer-content">
-            <p class="text-sm text-gray-600 text-center">
-              © Brandname 2020. All rights reserved.{" "}
-              <a href="https://twitter.com/iaminos">by iAmine</a>
+        <footer className="footer px-4 py-6">
+          <div className="footer-content">
+            <p className="text-sm text-gray-600 text-center">
+              © Didacti-K 2024. All rights reserved.{" "}
             </p>
           </div>
         </footer>

@@ -1,25 +1,27 @@
-import React from 'react'
+import React from 'react';
 
 export const CursosPage = () => {
   return (
-    <div class="flex flex-row min-h-screen bg-gray-100 text-gray-800">
-      <main class="main flex flex-col flex-grow -ml-64 md:ml-0 transition-all duration-150 ease-in">
+    <div className="flex flex-row min-h-screen bg-gray-100 text-gray-800">
+      <main className="main flex flex-col flex-grow md:ml-0 transition-all duration-150 ease-in mx-auto">
         
-        <div class="main-content flex flex-col flex-grow p-4">
-          <h1 class="font-bold text-2xl text-gray-700">Cursos</h1>
+        <div className="main-content flex flex-col flex-grow p-4">
+          <h1 className="font-bold text-2xl text-gray-700">Cursos</h1>
 
-          <div class="flex flex-col flex-grow border-4 border-gray-400 border-dashed bg-white rounded mt-4"></div>
+          <div className="flex flex-col flex-grow rounded mt-4">
+            <h1>Cursos Page in work!</h1>
+          </div>
         </div>
-        <footer class="footer px-4 py-6">
-          <div class="footer-content">
-            <p class="text-sm text-gray-600 text-center">
-              © Brandname 2020. All rights reserved.{" "}
-              <a href="https://twitter.com/iaminos">by iAmine</a>
+        <footer className="footer px-4 py-6">
+          <div className="footer-content">
+            <p className="text-sm text-gray-600 text-center">
+              © Didacti-K 2024. All rights reserved.{" "}
             </p>
           </div>
         </footer>
       </main>
     </div>
-  )
-}
+  );
+};
+
 export default CursosPage;

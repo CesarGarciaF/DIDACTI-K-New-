@@ -1,153 +1,94 @@
-import React, {useState} from 'react';
-import { FloatButton, Modal, Layout, Flex } from 'antd';
+import React, { useState } from 'react';
+import { FloatButton, Modal, Layout } from 'antd';
 
 export const GroupPage = () => {
   const [open, setOpen] = useState(false);
 
+  const handleSave = () => {
+    // Lógica para guardar la información
+    setOpen(false);
+  };
+
   return (
-    <div class="flex flex-row min-h-screen bg-gray-100 text-gray-800">
-      <main class="main flex flex-col flex-grow -ml-64 md:ml-0 transition-all duration-150 ease-in">
+    <div className="flex flex-row min-h-screen bg-gray-100 text-gray-800">
+      <main className="main flex flex-col flex-grow md:ml-0 transition-all duration-150 ease-in mx-auto">
 
-        <div class="main-content flex flex-col flex-grow p-4">
-          <h1 class="font-bold text-2xl text-gray-700">Grupos</h1>
-          <div class="flex flex-col flex-grow border-4 border-gray-400 border-dashed bg-white rounded mt-4">
-            <FloatButton onClick={() => setOpen(true)} tooltip=
-              {
-                <div>Documents
-                  <Modal
-                    centered
-                    open={open}
-                    onOk={() => setOpen(true)}
-                    onCancel={() => setOpen(true)}
-                    width={1000}
-                  >
-                    <form class="bg-white dark:bg-black">
-                      <div class="space-y-12">
-                        <div class="border-b border-gray-900/10 pb-12">
-                          <h2 class="text-base font-semibold leading-7 text-gray-900">Profile</h2>
-                          <p class="mt-1 text-sm leading-6 text-gray-600">This information will be displayed publicly so be careful what you share.</p>
-                          <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
-                            <div class="sm:col-span-4">
-                              <label for="username" class="block text-sm font-medium leading-6 text-gray-900">Username</label>
-                              <div class="mt-2">
-                                <div class="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md">
-                                  <span class="flex select-none items-center pl-3 text-gray-500 sm:text-sm">workcation.com/</span>
-                                  <input type="text" name="username" id="username" autocomplete="username" class="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6" placeholder="janesmith" />
-                                </div>
-                              </div>
-                            </div>
+        <div className="main-content flex flex-col flex-grow p-4">
+          <h1 className="font-bold text-2xl text-gray-700">Grupos</h1>
+          <div className="flex flex-col flex-grow rounded mt-4">
+            <FloatButton onClick={() => setOpen(true)} tooltip="Documents" />
 
-                            <div class="col-span-full">
-                              <label for="about" class="block text-sm font-medium leading-6 text-gray-900">About</label>
-                              <div class="mt-2">
-                                <textarea id="about" name="about" rows="3" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"></textarea>
-                              </div>
-                              <p class="mt-3 text-sm leading-6 text-gray-600">Write a few sentences about yourself.</p>
-                            </div>
-
-
-                            <div class="col-span-full">
-                              <label for="cover-photo" class="block text-sm font-medium leading-6 text-gray-900">Cover photo</label>
-                              <div class="mt-2 flex justify-center rounded-lg border border-dashed border-gray-900/25 px-6 py-10">
-                                <div class="text-center">
-                                  <svg class="mx-auto h-12 w-12 text-gray-300" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                                    <path fill-rule="evenodd" d="M1.5 6a2.25 2.25 0 012.25-2.25h16.5A2.25 2.25 0 0122.5 6v12a2.25 2.25 0 01-2.25 2.25H3.75A2.25 2.25 0 011.5 18V6zM3 16.06V18c0 .414.336.75.75.75h16.5A.75.75 0 0021 18v-1.94l-2.69-2.689a1.5 1.5 0 00-2.12 0l-.88.879.97.97a.75.75 0 11-1.06 1.06l-5.16-5.159a1.5 1.5 0 00-2.12 0L3 16.061zm10.125-7.81a1.125 1.125 0 112.25 0 1.125 1.125 0 01-2.25 0z" clip-rule="evenodd" />
-                                  </svg>
-                                  <div class="mt-4 flex text-sm leading-6 text-gray-600">
-                                    <label for="file-upload" class="relative cursor-pointer rounded-md bg-white font-semibold text-indigo-600 focus-within:outline-none focus-within:ring-2 focus-within:ring-indigo-600 focus-within:ring-offset-2 hover:text-indigo-500">
-                                      <span>Upload a file</span>
-                                      <input id="file-upload" name="file-upload" type="file" class="sr-only" />
-                                    </label>
-                                    <p class="pl-1">or drag and drop</p>
-                                  </div>
-                                  <p class="text-xs leading-5 text-gray-600">PNG, JPG, GIF up to 10MB</p>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-
-                        <div class="border-b border-gray-900/10 pb-12">
-                          <h2 class="text-base font-semibold leading-7 text-gray-900">Personal Information</h2>
-                          <p class="mt-1 text-sm leading-6 text-gray-600">Use a permanent address where you can receive mail.</p>
-
-                          <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
-                            <div class="sm:col-span-3">
-                              <label for="first-name" class="block text-sm font-medium leading-6 text-gray-900">First name</label>
-                              <div class="mt-2">
-                                <input type="text" name="first-name" id="first-name" autocomplete="given-name" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
-                              </div>
-                            </div>
-
-                            <div class="sm:col-span-3">
-                              <label for="last-name" class="block text-sm font-medium leading-6 text-gray-900">Last name</label>
-                              <div class="mt-2">
-                                <input type="text" name="last-name" id="last-name" autocomplete="family-name" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
-                              </div>
-                            </div>
-
-                            <div class="sm:col-span-4">
-                              <label for="email" class="block text-sm font-medium leading-6 text-gray-900">Email address</label>
-                              <div class="mt-2">
-                                <input id="email" name="email" type="email" autocomplete="email" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
-                              </div>
-                            </div>
-
-                            <div class="sm:col-span-3">
-                              <label for="country" class="block text-sm font-medium leading-6 text-gray-900">Country</label>
-                              <div class="mt-2">
-                                <select id="country" name="country" autocomplete="country-name" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6">
-                                  <option>United States</option>
-                                  <option>Canada</option>
-                                  <option>Mexico</option>
-                                </select>
-                              </div>
-                            </div>
-
-                            <div class="col-span-full">
-                              <label for="street-address" class="block text-sm font-medium leading-6 text-gray-900">Street address</label>
-                              <div class="mt-2">
-                                <input type="text" name="street-address" id="street-address" autocomplete="street-address" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
-                              </div>
-                            </div>
-
-                            <div class="sm:col-span-2 sm:col-start-1">
-                              <label for="city" class="block text-sm font-medium leading-6 text-gray-900">City</label>
-                              <div class="mt-2">
-                                <input type="text" name="city" id="city" autocomplete="address-level2" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
-                              </div>
-                            </div>
-
-                            <div class="sm:col-span-2">
-                              <label for="region" class="block text-sm font-medium leading-6 text-gray-900">State / Province</label>
-                              <div class="mt-2">
-                                <input type="text" name="region" id="region" autocomplete="address-level1" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
-                              </div>
-                            </div>
-
-                            <div class="sm:col-span-2">
-                              <label for="postal-code" class="block text-sm font-medium leading-6 text-gray-900">ZIP / Postal code</label>
-                              <div class="mt-2">
-                                <input type="text" name="postal-code" id="postal-code" autocomplete="postal-code" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-
-                      <div class="mt-6 flex items-center justify-end gap-x-6">
-                        <button type="button" class="text-sm font-semibold leading-6 text-gray-900">Cancel</button>
-                        <button type="submit" class="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Save</button>
-                      </div>
-                    </form>
-                  </Modal>
+            <Modal
+              centered
+              open={open}
+              onCancel={() => setOpen(false)}
+              footer={[
+                <button key="save" onClick={handleSave} className="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
+                  Save
+                </button>,
+              ]}
+            >
+              {/* Formulario */}
+              <form className="w-full max-w-lg mx-auto mt-10">
+                <div className="flex flex-wrap -mx-3 mb-6">
+                  <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+                    <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" htmlFor="grid-first-name">
+                      First Name
+                    </label>
+                    <input className="appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" id="grid-first-name" type="text" placeholder="Jane" />
+                  </div>
+                  <div className="w-full md:w-1/2 px-3">
+                    <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" htmlFor="grid-last-name">
+                      Last Name
+                    </label>
+                    <input className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-last-name" type="text" placeholder="Doe" />
+                  </div>
                 </div>
-              } />
+                <div className="flex flex-wrap -mx-3 mb-6">
+                  <div className="w-full px-3">
+                    <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" htmlFor="grid-password">
+                      Password
+                    </label>
+                    <input className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-password" type="password" placeholder="******************" />
+                    <p className="text-gray-600 text-xs italic">Make it as long and as crazy as you'd like</p>
+                  </div>
+                </div>
+                <div className="flex flex-wrap -mx-3 mb-2">
+                  <div className="w-full md:w-1/3 px-3 mb-6 md:mb-0">
+                    <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" htmlFor="grid-city">
+                      City
+                    </label>
+                    <input className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-city" type="text" placeholder="Albuquerque" />
+                  </div>
+                  <div className="w-full md:w-1/3 px-3 mb-6 md:mb-0">
+                    <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" htmlFor="grid-state">
+                      State
+                    </label>
+                    <div className="relative">
+                      <select className="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-state">
+                        <option>New Mexico</option>
+                        <option>Missouri</option>
+                        <option>Texas</option>
+                      </select>
+                      <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+                        <svg className="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" /></svg>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="w-full md:w-1/3 px-3 mb-6 md:mb-0">
+                    <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" htmlFor="grid-zip">
+                      Zip
+                    </label>
+                    <input className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-zip" type="text" placeholder="90210" />
+                  </div>
+                </div>
+              </form>
+            </Modal>
           </div>
         </div>
-        <footer class="footer px-4 py-6">
-          <div class="footer-content">
-            <p class="text-sm text-gray-600 text-center">
+        <footer className="footer px-4 py-6">
+          <div className="footer-content">
+            <p className="text-sm text-gray-600 text-center">
               © Brandname 2020. All rights reserved.{" "}
               <a href="https://twitter.com/iaminos">by iAmine</a>
             </p>
