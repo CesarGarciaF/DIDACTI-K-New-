@@ -1,0 +1,29 @@
+/* CustomCalendar.css */
+
+/* Importar estilos de react-big-calendar */
+@import 'react-big-calendar/lib/css/react-big-calendar.css';
+@import 'react-big-calendar/lib/addons/dragAndDrop/styles'; /* Si estás utilizando DnD */
+
+/* Personalización de variables */
+:root {
+  --background-color: #f0f0f0; /* Cambia el color de fondo del calendario */
+  --event-background-color: #317ae2; /* Cambia el color de fondo del evento */
+  --event-border-color: #1e4ba8; /* Cambia el color del borde del evento */
+  --event-color: #ffffff; /* Cambia el color del texto del evento */
+  --today-background-color: #7C7C7C; /* Cambia el color de fondo del día actual */
+}
+
+/* Aplicar estilos personalizados */
+.rbc-calendar {
+  background-color: var(--background-color);
+}
+
+.rbc-event {
+  background-color: var(--event-background-color);
+  border-color: var(--event-border-color);
+  color: var(--event-color);
+}
+
+.rbc-today {
+  background-color: var(--today-background-color);
+}

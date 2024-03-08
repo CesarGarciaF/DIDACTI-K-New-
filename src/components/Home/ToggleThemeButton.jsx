@@ -1,7 +1,6 @@
 import React from 'react';
 import { Button } from 'antd';
 import { HiOutlineSun, HiOutlineMoon } from 'react-icons/hi';
-import { MenuFoldOutlined, MenuUnfoldOutlined } from '@ant-design/icons';
 import { AiOutlineMenuFold, AiOutlineMenuUnfold } from "react-icons/ai";
 
 const ToggleThemeButton = ({ darkTheme, toggleTheme, collapsed, setCollapsed }) => {
