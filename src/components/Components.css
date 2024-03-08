@@ -1,6 +1,3 @@
-/* CustomCalendar.css */
-
-/* Importar estilos de react-big-calendar */
 @import 'react-big-calendar/lib/css/react-big-calendar.css';
 @import 'react-big-calendar/lib/addons/dragAndDrop/styles'; /* Si estás utilizando DnD */
 
@@ -26,4 +23,12 @@
 
 .rbc-today {
   background-color: var(--today-background-color);
+}
+
+.modal-show {
+  display: block;
+}
+
+.modal-hide {
+  display: none;
 }

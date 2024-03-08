@@ -84,3 +84,28 @@
   background: wheat;
   padding: 40px;
 }
+
+.btn-toggle {
+  display: none;
+}
+
+.sidebar-toggle {
+  display: flex !important;
+  position: sticky !important;
+  left: 0;
+  top: 0;
+  max-height: 100vh; /* Utiliza la altura de la ventana */
+  z-index: 9999;
+  color: #ffff;
+}
+
+
+@media (max-width: 792px) {
+  .sidebar {
+    display: none;
+  }
+
+  .btn-toggle {
+    display: block;
+  }
+}

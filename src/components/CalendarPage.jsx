@@ -12,13 +12,20 @@ function CalendarPage() {
 
   const localizer = dayjsLocalizer(dayjs);
 
-  // Array de eventos
+  // Eventos
   const events = [
     {
       title: 'Mi evento',
+      nota: 'test 1',
       start: dayjs('2024-03-07T00:00:00').toDate(),
       end: dayjs('2024-03-08T01:00:00').toDate(),
     },
+    {
+      title: 'Cumpleaños de German',
+      nota: 'Cumpleaños feliz,  feliz vida pa',
+      start: dayjs('2024-03-07T00:00:00').toDate(),
+      end: dayjs('2024-03-08T01:00:00').toDate(),
+    }
   ];
 
   const messages = {
@@ -36,6 +43,28 @@ function CalendarPage() {
     noEventsInRange: 'Sin eventos',
   };
 
+  const [selectedEvent, setSelectedEvent] = useState(undefined)
+  const [modalState, setModalState] = useState(false)
+
+  const handleSelectedEvent = (e) => {
+    setSelectedEvent(e)
+    setModalState(true)
+  }
+
+  const Modal = () => {
+    return (
+      <div className={`modal-${modalState === true ? 'show' : 'hide'}`}>
+        {selectedEvent && (
+          <div>
+            <p>Nombre del evento: {selectedEvent.title}</p>
+            <p>Evento: {selectedEvent.nota.toLocaleString()}</p>
+            <p>Fecha de inicio: {selectedEvent.start.toLocaleString()}</p>
+          </div>
+        )}
+      </div>
+    );
+  };
+
   return (
     <div className="flex flex-row min-h-screen bg-gray-100 text-gray-800 mt-12 mb-4">
       <main className="main flex flex-col flex-grow md:ml-0 transition-all duration-150 ease-in mx-auto">
@@ -43,7 +72,8 @@ function CalendarPage() {
           <h1 className="font-bold text-2xl text-gray-700">Calendario</h1>
 
           <div className="flex flex-col flex-grow rounded mt-4">
-            <Calendar style={{zIndex: 1}}
+            {selectedEvent && <Modal />}
+            <Calendar style={{ zIndex: 1 }}
               localizer={localizer}
               events={events}
               views={['month', 'day']}
@@ -51,9 +81,11 @@ function CalendarPage() {
               min={dayjs('2024-03-07T08:00:00').toDate()}
               max={dayjs('2024-03-30T18:00:00').toDate()}
               formats={{
-                dayFormat: date => dayjs(date).format('dddd - DD/MM'),
+                dayFormat: date => dayjs(date).format('dddd - DD / MM'),
               }}
               messages={messages}
+              onSelectSlot={(e) => handleSelect(e)}
+              onSelectEvent={(e) => handleSelectedEvent(e)}
             />
           </div>
         </div>

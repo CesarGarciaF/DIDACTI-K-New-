@@ -4,7 +4,7 @@ import React, { useState, useRef } from "react";
 export default function DashboardPage() {
   // const { logout } = useAuth();
   return (
-    <div className="flex flex-row min-h-screen bg-gray-100 text-gray-800 cont">
+    <div className="flex flex-row min-h-screen bg-gray-100 text-gray-800 cont mt-12">
       <main className="main flex flex-col flex-grow md:ml-0 transition-all duration-150 ease-in mx-auto">
 
         <div className="main-content flex flex-col flex-grow p-4">
