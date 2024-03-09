@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { Layout, theme } from 'antd';
+import { Outlet, useLocation } from 'react-router-dom';
+import { LuMenuSquare } from "react-icons/lu";
 import Logo from './Logo';
 import MenuList from './MenuList';
 import ToggleThemeButton from './ToggleThemeButton';
-import { Outlet } from 'react-router-dom';
-import { LuMenuSquare } from "react-icons/lu";
 import './Home.css';
 
 const { Header, Sider, Footer } = Layout;
@@ -29,9 +29,29 @@ function Home() {
     setIsSwitched(!isSwitched);
   };
 
-  React.useEffect(() => {
-    console.log('Clase actual:', sidebarClass);
-  }, [sidebarClass]);
+  const MyHeader = () => {
+    const location = useLocation();
+    const currentPath = location.pathname;
+    const formatPath = currentPath.replace('/home/', '');
+  
+    return (
+      <Header
+        style={{ padding: 0, background: '#e2e8f0', zIndex: 2, borderTop: '1px solid #fff' }} className="header flex" >
+        <div className='buttons-container flex'>
+          <div className="btn-toggle">
+            <button className='btn' onClick={cambiarClase}>
+              <LuMenuSquare />
+            </button>
+          </div>
+          <div className="text">
+            <h1>{formatPath}</h1>
+          </div>
+        </div>
+      </Header>
+    );
+  };
+  
+
 
   return (
     <div className="allhome">
@@ -50,17 +70,7 @@ function Home() {
           />
         </Sider>
         <Layout>
-          <Header style={{ padding: 0, background: colorBgContainer, zIndex: 2, borderTop: '1px solid #fff' }} className="header">
-            <div className='buttons-container'>
-              <div className="text">
-              </div>
-              <div className="btn-toggle">
-                <button className='btn' onClick={cambiarClase}>
-                  <LuMenuSquare />
-                </button>
-              </div>
-            </div>
-          </Header>
+          <MyHeader />
           <Outlet />
           <Footer style={{ textAlign: 'center', background: '#001529', color: 'white', padding: '10px', position: 'fixed', bottom: 0, width: '100%', zIndex: 1, borderTop: '1px solid #e8e8e8' }}>
             Ant Design ©2023 Created by XXX UED

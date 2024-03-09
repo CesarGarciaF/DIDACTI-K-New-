@@ -99,10 +99,24 @@
   color: #ffff;
 }
 
+.text {
+  font-size: x-large;
+  text-transform: capitalize;
+  margin-top: 10%;
+  margin-left: 25px;
+  font-weight: bold;
+}
+
 
 @media (max-width: 792px) {
   .sidebar {
     display: none;
+  }
+
+  .text {
+    font-size: large;
+    text-transform: capitalize;
+    margin-top: 12%;
   }
 
   .btn-toggle {

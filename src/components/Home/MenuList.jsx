@@ -12,7 +12,7 @@ const MenuList = ({ darkTheme }) => {
                 <Link to={"dashboard"}>Dashboard</Link>
             </Menu.Item>
             <Menu.Item key="grupos" icon={<AppstoreOutlined />}>
-                <Link to={"grupo"}>Grupos</Link>
+                <Link to={"grupos"}>Grupos</Link>
             </Menu.Item>
 
             <Menu.SubMenu key='cursos' icon={<BarsOutlined />} title="Cursos">
@@ -33,11 +33,11 @@ const MenuList = ({ darkTheme }) => {
             </Menu.Item>
 
             <Menu.Item key="calendario" icon={<PayCircleOutlined />}>
-                <Link to={"calendar"}>Calendario</Link>
+                <Link to={"calendario"}>Calendario</Link>
             </Menu.Item>
 
             <Menu.Item key="ajustes" icon={<SettingOutlined />}>
-                <Link to={"settings"}>Ajustes</Link>
+                <Link to={"ajustes"}>Ajustes</Link>
             </Menu.Item>
         </Menu>
     );

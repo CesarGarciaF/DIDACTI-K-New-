@@ -28,15 +28,15 @@ function App() {
           <Route path="/logout" />
           <Route path="/forgot" element={<ForgotPass />} />
 
-          <Route path="/home/*" element={<Home />}>
+          <Route path="/home/" element={<Home />}>
             <Route index element={<Navigate to="dashboard" replace />} />
             <Route path="dashboard" element={<DashboardPage />} />
-            <Route path="grupo" element={<GroupPage />} />
+            <Route path="grupos" element={<GroupPage />} />
             <Route path="planeaciones" element={<PlaneacionesPage />} />
             <Route path="cursos" element={<CursosPage />} />
             <Route path="sponsors" element={<PatrocinadoresPage />} />
-            <Route path="calendar" element={<CalendarPage />} />
-            <Route path="settings" element={<SettingPage />} />
+            <Route path="calendario" element={<CalendarPage />} />
+            <Route path="ajustes" element={<SettingPage />} />
           </Route>
         </Routes>
       </BrowserRouter>
