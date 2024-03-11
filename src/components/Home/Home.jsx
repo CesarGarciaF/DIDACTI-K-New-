@@ -5,6 +5,7 @@ import { LuMenuSquare } from "react-icons/lu";
 import Logo from './Logo';
 import MenuList from './MenuList';
 import ToggleThemeButton from './ToggleThemeButton';
+import { AreaChart } from "@tremor/react";
 import './Home.css';
 
 const { Header, Sider, Footer } = Layout;
@@ -36,7 +37,7 @@ function Home() {
   
     return (
       <Header
-        style={{ padding: 0, background: '#e2e8f0', zIndex: 2, borderTop: '1px solid #fff' }} className="header flex" >
+        style={{ padding: 0, zIndex: 2, color: '#fff'}} className="header flex bg-dark-tremor-brand-faint">
         <div className='buttons-container flex'>
           <div className="btn-toggle">
             <button className='btn' onClick={cambiarClase}>
@@ -72,7 +73,7 @@ function Home() {
         <Layout>
           <MyHeader />
           <Outlet />
-          <Footer style={{ textAlign: 'center', background: '#001529', color: 'white', padding: '10px', position: 'fixed', bottom: 0, width: '100%', zIndex: 1, borderTop: '1px solid #e8e8e8' }}>
+          <Footer style={{ textAlign: 'center', background: '#001529', color: 'white', padding: '10px', position: 'fixed', bottom: 0, width: '100%', zIndex: 1}}>
             Ant Design ©2023 Created by XXX UED
           </Footer>
         </Layout>

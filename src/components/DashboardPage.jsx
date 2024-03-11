@@ -73,7 +73,7 @@ export default function DashboardPage() {
   // const { logout } = useAuth();
   return (
     <div className="flex flex-row min-h-screen bg-gray-200 text-gray-1000 cont mt-14 mb-4">
-      <main className="main flex flex-col flex-grow md:ml-0 transition-all duration-150 ease-in mx-auto">
+      <main className="main flex flex-col flex-grow md:ml-0 transition-all duration-150 ease-in mx-auto bg-dark-tremor-brand-faint">
         <div className="main-content flex flex-col flex-grow p-4">
 
           <div className="flex flex-col flex-grow rounded mt-4 bg-dark-tremor-brand-faint">
@@ -195,7 +195,7 @@ export default function DashboardPage() {
               </div>
               {/* END Card */}
             </div>
-            <h3 className="text-tremor-default text-tremor-content dark:text-dark-tremor-content">Newsletter Revenue</h3>
+            <h3 className="text-tremor-default text-tremor-content dark:text-dark-tremor-content mt-8">Newsletter Revenue</h3>
             <p className="text-tremor-metric text-tremor-content-strong dark:text-dark-tremor-content-strong font-semibold">$34,567</p>
             <AreaChart
               className="mt-4 h-72"

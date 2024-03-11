@@ -55,7 +55,7 @@ function CalendarPage() {
     return (
       <div className={`modal-${modalState === true ? 'show' : 'hide'}`}>
         {selectedEvent && (
-          <div>
+          <div style={{color: 'white'}}>
             <p>Nombre del evento: {selectedEvent.title}</p>
             <p>Evento: {selectedEvent.nota.toLocaleString()}</p>
             <p>Fecha de inicio: {selectedEvent.start.toLocaleString()}</p>
@@ -67,9 +67,8 @@ function CalendarPage() {
 
   return (
     <div className="flex flex-row min-h-screen bg-gray-100 text-gray-800 mt-12 mb-4">
-      <main className="main flex flex-col flex-grow md:ml-0 transition-all duration-150 ease-in mx-auto">
+      <main className="main flex flex-col flex-grow md:ml-0 transition-all duration-150 ease-in mx-auto bg-dark-tremor-brand-faint">
         <div className="main-content flex flex-col flex-grow p-4">
-          <h1 className="font-bold text-2xl text-gray-700">Calendario</h1>
 
           <div className="flex flex-col flex-grow rounded mt-4">
             {selectedEvent && <Modal />}
