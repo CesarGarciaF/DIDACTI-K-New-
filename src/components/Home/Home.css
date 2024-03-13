@@ -123,3 +123,20 @@
     display: block;
   }
 }
+
+@media (max-width: 620px) {
+  .sidebar {
+    display: none; /* Oculta la barra lateral en resoluciones menores a 620px */
+  }
+
+  .sidebar-toggle {
+    display: flex !important;
+    position: fixed !important;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    max-height: 100vh;
+    z-index: 9999;
+    color: #ffff;
+  }
+}

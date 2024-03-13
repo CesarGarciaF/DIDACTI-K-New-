@@ -11,35 +11,48 @@ import DashboardPage from "./components/DashboardPage";
 import GroupPage from "./components/GroupPage";
 import PlaneacionesPage from "./components/PlaneacionesPage";
 import CursosPage from "./components/CursosPage";
+//
+import CursoUno from "./components/Cursos/CursoUno";
+import CursoDos from "./components/Cursos/CursoDos";
+import CursoTres from "./components/Cursos/CursoTres";
+//
 import PatrocinadoresPage from "./components/PatrocinadoresPage";
-import CalendarPage from "./components/CalendarPage";
+// import CalendarPage from "./components/CalendarPage";
+import CalendarPageV2 from "./components/CalendarPageV2";
 import SettingPage from "./components/SettingsPage";
 import MainPage from "./pages/MainPage/MainPage";
+import { EventProvider } from "./context/EventContext";
 
 function App() {
   return (
     <AuthProvider>
-      <BrowserRouter>
-        <Routes>
-          <Route path="*" element={<ErrorPage />} />
-          <Route path="/" element={<MainPage />} />
-          <Route path="/login" element={<LoginPage />} />
-          <Route path="/signup" element={<SignupPage />} />
-          <Route path="/logout" />
-          <Route path="/forgot" element={<ForgotPass />} />
+      <EventProvider>
+        <BrowserRouter>
+          <Routes>
+            <Route path="*" element={<ErrorPage />} />
+            <Route path="/" element={<MainPage />} />
+            <Route path="/login" element={<LoginPage />} />
+            <Route path="/signup" element={<SignupPage />} />
+            <Route path="/logout" />
+            <Route path="/forgot" element={<ForgotPass />} />
 
-          <Route path="/home/" element={<Home />}>
-            <Route index element={<Navigate to="dashboard" replace />} />
-            <Route path="dashboard" element={<DashboardPage />} />
-            <Route path="grupos" element={<GroupPage />} />
-            <Route path="planeaciones" element={<PlaneacionesPage />} />
-            <Route path="cursos" element={<CursosPage />} />
-            <Route path="sponsors" element={<PatrocinadoresPage />} />
-            <Route path="calendario" element={<CalendarPage />} />
-            <Route path="ajustes" element={<SettingPage />} />
-          </Route>
-        </Routes>
-      </BrowserRouter>
+            <Route path="/home/" element={<Home />}>
+              <Route index element={<Navigate to="dashboard" replace />} />
+              <Route path="dashboard" element={<DashboardPage />} />
+              <Route path="grupos" element={<GroupPage />} />
+              <Route path="planeaciones" element={<PlaneacionesPage />} />
+              <Route path="cursos" element={<CursosPage />} />
+              <Route path="sponsors" element={<PatrocinadoresPage />} />
+              <Route path="calendario" element={<CalendarPageV2 />} />
+              <Route path="ajustes" element={<SettingPage />} />
+            </Route>
+
+            <Route path="/home/cursos/cursouno" element={<CursoUno />} />
+            <Route path="/home/cursos/cursodos" element={<CursoDos />} />
+            <Route path="/home/cursos/cursotres" element={<CursoTres />} />
+          </Routes>
+        </BrowserRouter>
+      </EventProvider>
     </AuthProvider>
   );
 }

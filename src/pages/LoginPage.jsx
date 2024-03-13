@@ -18,7 +18,7 @@ export default function LoginPage() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (isAuthenticated) navigate("/dashboard");
+    if (isAuthenticated) navigate("/home");
   }, [isAuthenticated]);
 
   const onSubmit = handleSubmit(async (values) => {
