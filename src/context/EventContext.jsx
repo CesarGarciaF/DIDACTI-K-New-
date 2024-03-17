@@ -1,5 +1,5 @@
 import { createContext, useContext, useState } from "react";
-import { getEventsRequest } from "../services/EventService";
+import { getEventsRequest, createEventRequest } from "../services/EventService";
 
 const EventContext = createContext();
 
@@ -19,14 +19,31 @@ export function EventProvider({ children }) {
     try {
       const res = await getEventsRequest();
       setEvents(res.data);
-      // console.log(res);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const createEvent = async (event) => {
+    try {
+      const res = await createEventRequest(event);
+      getEvents();
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const updateEvent = async (event) => {
+    try {
+      const res = await updateEventRequest(event);
+      getEvents();
     } catch (error) {
       console.log(error);
     }
   };
 
   return (
-    <EventContext.Provider value={{ events, getEvents }}>
+    <EventContext.Provider value={{ events, getEvents, createEvent }}>
       {children}
     </EventContext.Provider>
   );

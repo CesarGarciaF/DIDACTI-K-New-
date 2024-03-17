@@ -22,6 +22,12 @@ import CalendarPageV2 from "./components/CalendarPageV2";
 import SettingPage from "./components/SettingsPage";
 import MainPage from "./pages/MainPage/MainPage";
 import { EventProvider } from "./context/EventContext";
+import {
+  Sidebar,
+  SidebarItem,
+} from "./components/Home/Layout/Sidebar/Sidebar.component";
+
+import { LuHome } from "react-icons/lu";
 
 function App() {
   return (
@@ -45,11 +51,10 @@ function App() {
               <Route path="sponsors" element={<PatrocinadoresPage />} />
               <Route path="calendario" element={<CalendarPageV2 />} />
               <Route path="ajustes" element={<SettingPage />} />
+              <Route path="/home/cursos/cursouno" element={<CursoUno />} />
+              <Route path="/home/cursos/cursodos" element={<CursoDos />} />
+              <Route path="/home/cursos/cursotres" element={<CursoTres />} />
             </Route>
-
-            <Route path="/home/cursos/cursouno" element={<CursoUno />} />
-            <Route path="/home/cursos/cursodos" element={<CursoDos />} />
-            <Route path="/home/cursos/cursotres" element={<CursoTres />} />
           </Routes>
         </BrowserRouter>
       </EventProvider>

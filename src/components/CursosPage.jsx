@@ -1,5 +1,5 @@
 import React from "react";
-import ortografia from "../assets/ortografia.png";
+// import ortografia from "../assets/ortografia.png";
 import { Link } from "react-router-dom";
 
 export const CursosPage = () => {
@@ -16,7 +16,7 @@ export const CursosPage = () => {
                 <a href="#">
                   <img
                     class="p-8 rounded-t-lg"
-                    src={ortografia}
+                    // src={ortografia}
                     alt="product image"
                   />
                 </a>
