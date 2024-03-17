@@ -1,7 +1,17 @@
 import React, { useState, useRef, useEffect } from "react";
 import { Layout, theme } from "antd";
 import { Outlet, useLocation } from "react-router-dom";
-import { LuCalendar, LuHome, LuMenuSquare } from "react-icons/lu";
+import {
+  LuActivity,
+  LuBookMarked,
+  LuBookOpen,
+  LuCalendar,
+  LuGroup,
+  LuHome,
+  LuMenuSquare,
+  LuSettings,
+  LuUsers2,
+} from "react-icons/lu";
 import Logo from "../../assets/Logo.svg";
 import MenuList from "./MenuList";
 import ToggleThemeButton from "./ToggleThemeButton";
@@ -144,10 +154,44 @@ function Home() {
           <SidebarItem
             icon={<LuHome size={20} />}
             text={"Dashboard"}
-            link={"/dashboard"}
+            link={"dashboard"}
             alert
           />
-          <SidebarItem icon={<LuCalendar size={20} />} text={"Calendario"} />
+          <SidebarItem
+            icon={<LuCalendar size={20} />}
+            text={"Calendario"}
+            link={"calendario"}
+          />
+          <SidebarItem
+            icon={<LuGroup size={20} />}
+            text={"Grupos"}
+            link={"grupos"}
+          />
+          <SidebarItem
+            icon={<LuBookMarked size={20} />}
+            text={"Cursos"}
+            link={"cursos"}
+          />
+          <SidebarItem
+            icon={<LuBookOpen size={20} />}
+            text={"Planeaciones"}
+            link={"planeaciones"}
+          />
+          <SidebarItem
+            icon={<LuUsers2 size={20} />}
+            text={"Patrocinadores"}
+            link={"sponsors"}
+          />
+          <SidebarItem
+            icon={<LuSettings size={20} />}
+            text={"Ajustes"}
+            link={"ajustes"}
+          />
+          {/* grupos
+cursos
+planeaciones
+sponsors
+ajustes */}
         </Sidebar>
         <div className="h-screen">
           <Disclosure

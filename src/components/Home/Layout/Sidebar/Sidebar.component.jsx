@@ -59,15 +59,14 @@ export function SidebarItem({ icon, text, link, active, alert }) {
           : "hover:bg-indigo-50 text-gray-600"
       }`}
     >
-      <Link to={link}>
-        {icon}
-        <span
-          className={`overflow-hidden transition-all ${
-            expanded ? "w-52 ml-3" : "w-0"
-          }`}
-        >
-          {text}
-        </span>
+      {icon}
+      <Link
+        to={link}
+        className={`overflow-hidden transition-all ${
+          expanded ? "w-52 ml-3" : "w-0"
+        }`}
+      >
+        {text}
       </Link>
       {alert && (
         <div
