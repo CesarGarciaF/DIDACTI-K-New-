@@ -33,12 +33,12 @@ export const AuthProvider = ({ children }) => {
     }
   };
 
-  const singin = async (user) => {
+  const signin = async (user) => {
     try {
       const res = await loginRequest(user);
-      setIsAuthenticated(true);
+      if (res.status === 200) setIsAuthenticated(true);
     } catch (error) {
-      // console.log(error);
+      console.log(error.response.data);
 
       if (Array.isArray(error.response.data))
         return setErrors(error.response.data);
@@ -87,7 +87,7 @@ export const AuthProvider = ({ children }) => {
 
   return (
     <AuthContext.Provider
-      value={{ signup, singin, logout, user, isAuthenticated, errors }}
+      value={{ signup, signin, logout, user, isAuthenticated, errors }}
     >
       {children}
     </AuthContext.Provider>

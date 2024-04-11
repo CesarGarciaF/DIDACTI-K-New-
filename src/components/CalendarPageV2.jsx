@@ -4,8 +4,6 @@ import FullCalendar from "@fullcalendar/react";
 import dayGridPlugin from "@fullcalendar/daygrid";
 import { useEvents } from "../context/EventContext";
 
-import { Calendar } from "primereact/calendar";
-
 function CalendarPageV2() {
   const { getEvents, createEvent, events } = useEvents();
 
@@ -17,7 +15,6 @@ function CalendarPageV2() {
 
   const onSubmit = handleSubmit(async (values) => {
     createEvent(values);
-    console.log(values);
   });
 
   useEffect(() => {
@@ -25,7 +22,7 @@ function CalendarPageV2() {
   }, []);
 
   return (
-    <div className="flex flex-row bg-gray-100 text-gray-100">
+    <div className="flex flex-row bg-gray-100">
       <main className="main flex flex-col flex-grow md:ml-0 transition-all duration-150 ease-in mx-auto">
         <div className="main-content flex flex-col flex-grow p-4">
           <div className="flex flex-col flex-grow rounded mt-4">

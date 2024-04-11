@@ -1,5 +1,7 @@
 import React, { useState, useRef } from "react";
 import { AreaChart } from "@tremor/react";
+import { Carousel } from "antd";
+import astroboys from "../assets/astroboys.jpg";
 
 const chartdata = [
   {
@@ -68,14 +70,57 @@ const valueFormatter = function (number) {
   return "$ " + new Intl.NumberFormat("us").format(number).toString();
 };
 
+const contentStyle = {
+  height: "160px",
+  color: "#fff",
+  lineHeight: "160px",
+  textAlign: "center",
+  background: "#FFF3C7",
+};
+
 export default function DashboardPage() {
   // const { logout } = useAuth();
   return (
-    <div className="flex flex-row text-gray-1000 cont mt-2 mb-2">
+    <div className="flex flex-row bg-gray-100">
       <main className="main flex flex-col flex-grow md:ml-0 transition-all duration-150 ease-in mx-auto">
-        <div className="main-content flex flex-col flex-grow">
+        <div className="main-content flex flex-col flex-grow p-4">
           <div className="flex flex-col flex-grow rounded mt-4">
-            <div className="grid grid-cols-1 gap-4 md:grid-cols-3 lg:gap-8">
+            <div className="grid grid-cols-1 gap-3 md:grid-cols-2 lg:gap-8">
+              {/*Carrusel*/}
+              <div className="col-span-3">
+                <Carousel autoplay className="overflow-hidden rounded-lg">
+                  <div>
+                    <img
+                      src={astroboys}
+                      alt="Bob y Patricio"
+                      className="w-full max-h-96"
+                    />
+                  </div>
+                  <div>
+                    <img
+                      src={astroboys}
+                      alt="Bob y Patricio"
+                      className="w-full max-h-96"
+                    />
+                  </div>
+                  <div>
+                    <img
+                      src={astroboys}
+                      alt="Bob y Patricio"
+                      className="w-full max-h-96"
+                    />
+                  </div>
+                  <div>
+                    <img
+                      src={astroboys}
+                      alt="Bob y Patricio"
+                      className="w-full max-h-96"
+                    />
+                  </div>
+                </Carousel>
+              </div>
+              {/*Carrusel*/}
+
               {/* Card */}
               <div className="flex flex-col overflow-hidden rounded-lg bg-gray shadow-sm dark:bg-gray-800 dark:text-gray-100">
                 {/* Body */}
@@ -83,7 +128,7 @@ export default function DashboardPage() {
                   <dl className="space-y-1">
                     <dt className="text-2xl font-bold">146</dt>
                     <dd className="text-sm font-semibold uppercase tracking-wider text-gray-500 dark:text-gray-400">
-                      VENTAS
+                      Planeaciones
                     </dd>
                   </dl>
                   <div className="inline-flex items-center space-x-1 rounded-full bg-emerald-200 px-2 py-1 text-sm font-semibold leading-4 text-emerald-800">
@@ -106,10 +151,10 @@ export default function DashboardPage() {
 
                 {/* Action Link */}
                 <a
-                  href="#"
+                  href="planeaciones"
                   className="block bg-gray-50 p-3 text-center text-sm font-medium text-blue-600 hover:bg-gray-100 hover:bg-opacity-75 hover:text-blue-700 active:bg-gray-50 dark:bg-gray-900/50 dark:text-blue-400 dark:hover:bg-gray-900/75 dark:hover:text-blue-300 dark:active:bg-gray-900/50"
                 >
-                  Ver todas las Ventas...
+                  Ver todas las Planeaciones...
                 </a>
                 {/* END Action Link */}
               </div>
@@ -120,12 +165,12 @@ export default function DashboardPage() {
                 {/* Body */}
                 <div className="flex grow items-center justify-between p-5">
                   <dl className="space-y-1">
-                    <dt className="text-2xl font-bold">$5,128</dt>
+                    <dt className="text-2xl font-bold">89</dt>
                     <dd className="text-sm font-semibold uppercase tracking-wider text-gray-500 dark:text-gray-400">
-                      Ganancias
+                      Actividades
                     </dd>
                   </dl>
-                  <div className="inline-flex items-center space-x-1 rounded-full bg-rose-200 px-2 py-1 text-sm font-semibold leading-4 text-rose-800">
+                  <div className="inline-flex items-center space-x-1 rounded-full bg-green-200 px-2 py-1 text-sm font-semibold leading-4 text-green-800">
                     <svg
                       className="hi-solid hi-arrow-circle-down inline-block size-4"
                       fill="currentColor"
@@ -145,60 +190,21 @@ export default function DashboardPage() {
 
                 {/* Action Link */}
                 <a
-                  href="#"
+                  href="planeaciones"
                   className="block bg-gray-50 p-3 text-center text-sm font-medium text-blue-600 hover:bg-gray-100 hover:bg-opacity-75 hover:text-blue-700 active:bg-gray-50 dark:bg-gray-900/50 dark:text-blue-400 dark:hover:bg-gray-900/75 dark:hover:text-blue-300 dark:active:bg-gray-900/50"
                 >
-                  Ver todas las Ganancias...
-                </a>
-                {/* END Action Link */}
-              </div>
-              {/* END Card */}
-
-              {/* Card */}
-              <div className="flex flex-col overflow-hidden rounded-lg bg-gray shadow-sm dark:bg-gray-800 dark:text-gray-100">
-                {/* Body */}
-                <div className="flex grow items-center justify-between p-5">
-                  <dl className="space-y-1">
-                    <dt className="text-2xl font-bold">$2,670</dt>
-                    <dd className="text-sm font-semibold uppercase tracking-wider text-gray-500 dark:text-gray-400">
-                      BOLSA
-                    </dd>
-                  </dl>
-                  <div className="inline-flex items-center space-x-1 rounded-full bg-emerald-200 px-2 py-1 text-sm font-semibold leading-4 text-emerald-800">
-                    <svg
-                      className="hi-solid hi-arrow-circle-up inline-block size-4"
-                      fill="currentColor"
-                      viewBox="0 0 20 20"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        fillRule="evenodd"
-                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-8.707l-3-3a1 1 0 00-1.414 0l-3 3a1 1 0 001.414 1.414L9 9.414V13a1 1 0 102 0V9.414l1.293 1.293a1 1 0 001.414-1.414z"
-                        clipRule="evenodd"
-                      />
-                    </svg>
-                    <span>5.6%</span>
-                  </div>
-                </div>
-                {/* END Body */}
-
-                {/* Action Link */}
-                <a
-                  href="#"
-                  className="block bg-gray-50 p-3 text-center text-sm font-medium text-blue-600 hover:bg-gray-100 hover:bg-opacity-75 hover:text-blue-700 active:bg-gray-50 dark:bg-gray-900/50 dark:text-blue-400 dark:hover:bg-gray-900/75 dark:hover:text-blue-300 dark:active:bg-gray-900/50"
-                >
-                  Monitorea tus inversiones...
+                  Ver todas las Actividades...
                 </a>
                 {/* END Action Link */}
               </div>
               {/* END Card */}
             </div>
-            <h3 className="text-tremor-default text-tremor-content dark:text-dark-tremor-content mt-8">
+            {/* <h3 className="text-tremor-default text-tremor-content dark:text-dark-tremor-content">
               Newsletter Revenue
             </h3>
             <p className="text-tremor-metric text-tremor-content-strong dark:text-dark-tremor-content-strong font-semibold">
               $34,567
-            </p>
+            </p> */}
             <AreaChart
               className="mt-4 h-72"
               data={chartdata}

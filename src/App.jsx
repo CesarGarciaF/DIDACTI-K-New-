@@ -39,7 +39,7 @@ function App() {
             <Route path="/" element={<MainPage />} />
             <Route path="/login" element={<LoginPage />} />
             <Route path="/signup" element={<SignupPage />} />
-            <Route path="/logout" />
+            <Route path="/logout" logout />
             <Route path="/forgot" element={<ForgotPass />} />
 
             <Route path="/home/" element={<Home />}>

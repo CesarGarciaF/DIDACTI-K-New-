@@ -1,5 +1,5 @@
 import React from "react";
-// import ortografia from "../assets/ortografia.png";
+import ortografia from "../assets/choose-image.png";
 import { Link } from "react-router-dom";
 
 export const CursosPage = () => {

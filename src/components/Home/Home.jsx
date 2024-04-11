@@ -31,6 +31,7 @@ import { Fragment } from "react";
 import { Disclosure, Menu, Transition } from "@headlessui/react";
 import { Bars3Icon, BellIcon, XMarkIcon } from "@heroicons/react/24/outline";
 import { Breadcrumb } from "./Layout/Breadcrumb/Breadcrumb.component";
+import { Toolbar } from "./Layout/Toolbar/Toolbar.component";
 
 const user = {
   name: "Tom Cook",
@@ -46,9 +47,9 @@ const navigation = [
   // { name: "Reports", href: "#", current: false },
 ];
 const userNavigation = [
-  { name: "Your Profile", href: "#" },
+  { name: "Your Profile", href: "/home/profile" },
   { name: "Settings", href: "#" },
-  { name: "Sign out", href: "#" },
+  { name: "Sign out", href: "/logout" },
 ];
 
 function classNames(...classes) {
@@ -74,78 +75,6 @@ function Home() {
     setSidebarClass(() => (isSwitched ? "sidebar" : "sidebar-toggle"));
     setIsSwitched(!isSwitched);
   };
-
-  // const location = useLocation();
-  // const currentPath = location.pathname;
-  // const formatPath = currentPath.replace("/home/", "");
-  // const items = formatPath.split("/").map((part) => ({ label: part }));
-  // const home = { icon: "pi pi-home", url: "/home" };
-  // const MyHeader = () => {
-
-  //   return (
-  //     <Header className="header d-flex text-white border bg-dark-tremor-brand-faint">
-  //       <div className="container mx-auto flex justify-content-between justify-between align-items-center items-center">
-  //         <BreadCrumb className="border text" model={items} home={home} />
-  //         <div className="border btn-toggle">
-  //           <button className="btn" onClick={cambiarClase}>
-  //             <LuMenuSquare />
-  //           </button>
-  //         </div>
-  //       </div>
-  //     </Header>
-  //   );
-  // };
-
-  // return (
-  //   <div className="allhome">
-  //     <Layout>
-  //       <Sider
-  //         width={200}
-  //         trigger={null}
-  //         theme={darkTheme ? "dark" : "light"}
-  //         className={`${sidebarClass} sidebar`}
-  //       >
-  //         <Logo />
-  //         <MenuList darkTheme={darkTheme} />
-  //         <ToggleThemeButton darkTheme={darkTheme} toggleTheme={toggleTheme} />
-  //       </Sider>
-  //       <Layout>
-  //         <MyHeader />
-  //         <Outlet />
-  //         <Footer
-  //           style={{
-  //             textAlign: "center",
-  //             background: "#001529",
-  //             color: "white",
-  //             padding: "10px",
-  //             position: "fixed",
-  //             bottom: 0,
-  //             width: "100%",
-  //             zIndex: 1,
-  //           }}
-  //         >
-  //           Ant Design ©2023 Created by XXX UED
-  //         </Footer>
-  //       </Layout>
-  //     </Layout>
-  //   </div>
-  // );
-
-  // const items = [
-  //   {
-  //     label: "Home",
-  //     root: true,
-  //   },
-  // ];
-
-  // const start = <button>Hola</button>;
-
-  // const end = (
-  //   <Avatar
-  //     image="https://primefaces.org/cdn/primevue/images/avatar/amyelsner.png"
-  //     shape="circle"
-  //   />
-  // );
 
   return (
     <>
@@ -187,11 +116,6 @@ function Home() {
             text={"Ajustes"}
             link={"ajustes"}
           />
-          {/* grupos
-cursos
-planeaciones
-sponsors
-ajustes */}
         </Sidebar>
         <div className="h-screen">
           <Disclosure
@@ -367,6 +291,7 @@ ajustes */}
               <h1 className="text-2xl font-bold tracking-tight text-gray-900">
                 {/* Dashboard */}
                 <Breadcrumb />
+                <Toolbar />
               </h1>
             </div>
           </header>

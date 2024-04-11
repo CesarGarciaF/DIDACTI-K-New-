@@ -1,12 +1,7 @@
 import { useNavigate, Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { useAuth } from "../context/AuthContext";
-import { signupRequest } from "../services/AuthService";
 import { useState, useEffect } from "react";
-// import "./CreateForm.css";
-// import LoginService from "../services/login";
-// import { useAuth } from "../services/authProvider";
-// import { Navigate } from "react-router-dom";
 
 export default function LoginPage() {
   const {
@@ -14,7 +9,7 @@ export default function LoginPage() {
     handleSubmit,
     formState: { errors },
   } = useForm();
-  const { singin, isAuthenticated, errors: signinErrors } = useAuth();
+  const { signin, isAuthenticated, errors: signinErrors } = useAuth();
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -22,31 +17,8 @@ export default function LoginPage() {
   }, [isAuthenticated]);
 
   const onSubmit = handleSubmit(async (values) => {
-    await singin(values);
+    await signin(values);
   });
-  // const auth = useAuth();
-
-  // if (auth.isAuthenticated) {
-  //   return <Navigate to="/dashboard" />;
-  // }
-
-  // const handleSubmit = async (event) => {
-  //   event.preventDefault();
-  //   try {
-  //     const user = await LoginService.login({
-  //       username,
-  //       password,
-  //     });
-  //     setUser(user);
-  //     setUsername("");
-  //     setPassword("");
-  //   } catch (error) {
-  //     setErrorMessage("Credenciales Invalidas");
-  //     setTimeout(() => {
-  //       setErrorMessage(null);
-  //     }, 5000);
-  //   }
-  // };
 
   return (
     <section className="flex flex-col md:flex-row h-screen items-center justify-center">
@@ -64,9 +36,7 @@ export default function LoginPage() {
             Ingresa a tu cuenta
           </h1>
           {signinErrors.map((error, i) => (
-            <div className="bg-red-500 p-2 text-white" key={i}>
-              {error}
-            </div>
+            <div className="bg-red-500 p-2 text-white">{error}</div>
           ))}
           <form className="mt-6" onSubmit={onSubmit}>
             <div>
@@ -99,14 +69,7 @@ export default function LoginPage() {
             </div>
 
             <div className="text-right mt-2">
-              <Link to={"/forgot"}>
-                <a
-                  href="#"
-                  className="text-sm font-semibold text-gray-700 hover:text-blue-700 focus:text-blue-700"
-                >
-                  Olvidaste la contraseña?
-                </a>
-              </Link>
+              <Link to={"/forgot"}>Olvidaste la contraseña?</Link>
             </div>
 
             <button
