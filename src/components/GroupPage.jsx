@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { FloatButton, Modal} from 'antd';
-import { Select, SelectItem, TextInput} from '@tremor/react'
+import { FloatButton, Modal } from 'antd';
+import { Select, SelectItem, TextInput } from '@tremor/react'
 
 export const GroupPage = () => {
   const [open, setOpen] = useState(false);
@@ -18,7 +18,7 @@ export const GroupPage = () => {
           <div className="flex flex-col flex-grow rounded mt-4 ">
             {/* Boton con formulario flotante */}
             <FloatButton onClick={() => setOpen(true)} tooltip="Crear Grupo" />
-            <Modal 
+            <Modal
               centered
               open={open}
               onCancel={() => setOpen(false)}
@@ -30,57 +30,44 @@ export const GroupPage = () => {
             >
               <h1 className="font-bold text-2xl text-gray-700">Crear grupo</h1>
               {/* Formulario */}
-              <form className="w-full max-w-lg mx-auto mt-10 font-medium px-3 space-y-4">
-                {/* Primeros dos campos (Fases y Materia) */}
-                <div className='text-lg'>
-                  <label className="text-tremor-content dark:text-dark-tremor-content w-50">Fases
-                    <Select placeholder='Seleccione la fase'>
-                      <SelectItem value="1">1</SelectItem>
-                      <SelectItem value="2">2</SelectItem>
-                      <SelectItem value="3">3</SelectItem>
-                      <SelectItem value="4">4</SelectItem>
-                      <SelectItem value="5">5</SelectItem>
-                      <SelectItem value="6">6</SelectItem>
-                    </Select>
-                  </label>
-                  <label className="text-tremor-content dark:text-dark-tremor-content w-50">Materia
-                    <TextInput className="mx-auto max-w-xs" placeholder='Ingrese la materia' />
-                  </label>
+              <form className="w-full max-w-lg">
+                <div className="flex flex-wrap -mx-3 mb-6 mt-3">
+                  <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+                    <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" htmlFor="grid-first-name">
+                      Fases de grupo
+                    </label>
+                    <input className="appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" id="grid-first-name" type="text" placeholder="Fases" />
+                  </div>
+                  <div className="w-full md:w-1/2 px-3">
+                    <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" htmlFor="grid-last-name">
+                      Grado de grupo
+                    </label>
+                    <input className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-last-name" type="text" placeholder="Grado" />
+                  </div>
                 </div>
-                {/* Primeros dos campos (Fases y Materia) */}
-
-                {/* Segundos dos campos (Grado y Escuela) */}
-                <div className='text-lg'>
-                  <label className="text-tremor-content dark:text-dark-tremor-content w-50">Grado
-                    <Select placeholder='Seleccione el grado'>
-                      <SelectItem value="1">1</SelectItem>
-                      <SelectItem value="2">2</SelectItem>
-                      <SelectItem value="3">3</SelectItem>
-                      <SelectItem value="4">4</SelectItem>
-                      <SelectItem value="5">5</SelectItem>
-                      <SelectItem value="6">6</SelectItem>
-                    </Select>
-                  </label>
-
-                  <label className="text-tremor-content dark:text-dark-tremor-content w-50">Escuela
-                    <TextInput className="mx-auto max-w-xs" placeholder='Ingrese el nombre de la escuela' />
-                  </label>
+                <div className="flex flex-wrap -mx-3 ">
+                  <div className="w-full px-3">
+                    <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" htmlFor="grid-password">
+                      Escuela
+                    </label>
+                    <input className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-password" type="password" placeholder="Universidad Tecnologica del sur de Sonora" />
+                  </div>
+                  <div className="w-full px-3 mb-6 md:mb-0">
+                    <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" htmlFor="grid-state">
+                      Campos formativos
+                    </label>
+                    <div className="relative">
+                      <select className="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-state">
+                        <option>Lenguajes</option>
+                        <option>Saberes y pensamienro cientifico</option>
+                        <option>De lo humano y lo comunitario</option>
+                        <option>Etica , naturaleza y  sociedades</option>
+                      </select>
+                      <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                {/* Segundos dos campos (Grado y Escuela) */}
-
-                {/* Campos Formativos */}
-                <div className='text-lg'>
-                  <label className="text-tremor-content dark:text-dark-tremor-content w-full">Campos Formativos
-                    <Select placeholder='Seleccione uno'>
-                      <SelectItem value="Le">Lenguajes</SelectItem>
-                      <SelectItem value="Sa">Saberes y Pensamiento Científico</SelectItem>
-                      <SelectItem value="Et">Ética, Naturaleza y Sociedades</SelectItem>
-                      <SelectItem value="De">De lo Humano y lo Comunitario</SelectItem>
-                    </Select>
-                  </label>
-                </div>
-                {/* Campos Formativos */}
-
               </form>
               {/* Formulario */}
             </Modal>
