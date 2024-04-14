@@ -5,14 +5,14 @@ import { Link } from "react-router-dom";
 export const CursosPage = () => {
   return (
     <div className="flex flex-row min-h-screen bg-gray-100 text-gray-800">
-      <main className="main flex flex-col flex-grow md:ml-0 transition-all duration-150 ease-in mx-auto bg-dark-tremor-brand-faint">
+      <main className="main flex flex-col flex-grow md:ml-0 transition-all duration-150 ease-in mx-auto ">
         <div className="main-content flex flex-col flex-grow p-4">
           <h1 className="font-bold text-2xl text-gray-700">Cursos</h1>
 
           <div className="flex flex-col flex-grow rounded mt-4">
             <div className="flex flex-col md:flex-row space-y-12 md:space-y-0 space-x-0 md:space-x-12">
               {/* Card de cursos numero 1 */}
-              <div className="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+              <div className="w-full max-w-sm bg-gray border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
                 <button href="#">
                   <img
                     className="p-8 rounded-t-lg"
@@ -94,7 +94,7 @@ export const CursosPage = () => {
                 </div>
               </div>
               {/* Card de cursos numero 2 */}
-              <div className="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+              <div className="w-full max-w-sm bg-gray border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
                 <button href="#">
                   <img
                     className="p-8 rounded-t-lg"
@@ -176,7 +176,7 @@ export const CursosPage = () => {
                 </div>
               </div>
               {/* Card de cursos numero 3 */}
-              <div className="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+              <div className="w-full max-w-sm bg-gray border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
                 <button href="#">
                   <img
                     className="p-8 rounded-t-lg"
@@ -260,6 +260,7 @@ export const CursosPage = () => {
             </div>
           </div>
         </div>
+
         <footer className="footer px-4 py-6">
           <div className="footer-content">
             <p className="text-sm text-gray-600 text-center">
@@ -267,6 +268,7 @@ export const CursosPage = () => {
             </p>
           </div>
         </footer>
+        
       </main>
     </div>
   );

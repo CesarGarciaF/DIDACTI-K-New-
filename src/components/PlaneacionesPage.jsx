@@ -5,14 +5,13 @@ import iconCFhumano from '../assets/iconCFhumano.svg';
 import iconCFetica from '../assets/iconCFetica.svg';
 import iconCFsaberes from '../assets/iconCFsaberes.svg';
 
-
 export const PlaneacionesPage = () => {
 
   const [isOpen, setIsOpen] = React.useState(false);
 
   return (
-    <div className="flex flex-row min-h-screen bg-gray-200 text-gray-1000 cont mt-2 mb-2">
-      <main className="main flex flex-col flex-grow md:ml-0 transition-all duration-150 ease-in mx-auto bg-dark-tremor-brand-faint">
+    <div className="flex flex-row min-h-screen text-gray-1000 cont mt-1 mb-2">
+      <main className="main flex flex-col flex-grow md:ml-0 transition-all duration-150 ease-in mx-auto">
         <div className="main-content flex flex-col flex-grow p-4">
           <div className="flex flex-col flex-grow rounded mt-2">
             {/* Barra de busqueda */}
@@ -124,7 +123,7 @@ export const PlaneacionesPage = () => {
                       </p>
                     </div>
 
-                    <div className=''>
+                    <div>
                       <p className="mt-2 leading-6 text-tremor-default text-tremor-content">
                         Inicio
                         <TextInput placeholder='Comienza la planeación...' className="w-full h-12" />
@@ -149,7 +148,7 @@ export const PlaneacionesPage = () => {
             {/* Final de Boton de crear Planeaciones */}
 
             {/* Boton de Editar */}
-            <div className='mt-4'>
+            {/* <div className='mt-4'>
             <Button className="mx-auto block" onClick={() => setIsOpen(true)}>Editar</Button>
               <Dialog open={isOpen} onClose={(val) => setIsOpen(val)} static={true}>
                 <DialogPanel>
@@ -201,7 +200,7 @@ export const PlaneacionesPage = () => {
                   </form>
                 </DialogPanel>
               </Dialog>
-            </div>
+            </div> */}
             {/* Fin de Boton de Editar */}
           </div>
         </div>

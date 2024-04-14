@@ -1,70 +1,34 @@
 import React, { useState, useRef } from "react";
-import { AreaChart } from "@tremor/react";
+import { BarList, Card } from "@tremor/react";
 import { Carousel } from "antd";
 import astroboys from "../assets/astroboys.jpg";
+import LogoSolo from "../assets/LogoAloneBlue.png";
+import Usuario from "../assets/user.png"
 
-const chartdata = [
+const data = 
+[
   {
-    date: "Jan 22",
-    SemiAnalysis: 2890,
-    "The Pragmatic Engineer": 2338,
+    name: 'Planeaciones',
+    value: 47,
+    href: 'https://twitter.com/tremorlabs',
+    icon: function TwitterIcon() {
+      return (
+        <img src={LogoSolo} className="w-6 h-6 mr-2"/>
+      );
+    },
   },
   {
-    date: "Feb 22",
-    SemiAnalysis: 2756,
-    "The Pragmatic Engineer": 2103,
-  },
-  {
-    date: "Mar 22",
-    SemiAnalysis: 3322,
-    "The Pragmatic Engineer": 2194,
-  },
-  {
-    date: "Apr 22",
-    SemiAnalysis: 3470,
-    "The Pragmatic Engineer": 2108,
-  },
-  {
-    date: "May 22",
-    SemiAnalysis: 3475,
-    "The Pragmatic Engineer": 1812,
-  },
-  {
-    date: "Jun 22",
-    SemiAnalysis: 3129,
-    "The Pragmatic Engineer": 1726,
-  },
-  {
-    date: "Jul 22",
-    SemiAnalysis: 3490,
-    "The Pragmatic Engineer": 1982,
-  },
-  {
-    date: "Aug 22",
-    SemiAnalysis: 2903,
-    "The Pragmatic Engineer": 2012,
-  },
-  {
-    date: "Sep 22",
-    SemiAnalysis: 2643,
-    "The Pragmatic Engineer": 2342,
-  },
-  {
-    date: "Oct 22",
-    SemiAnalysis: 2837,
-    "The Pragmatic Engineer": 2473,
-  },
-  {
-    date: "Nov 22",
-    SemiAnalysis: 2954,
-    "The Pragmatic Engineer": 3848,
-  },
-  {
-    date: "Dec 22",
-    SemiAnalysis: 3239,
-    "The Pragmatic Engineer": 3736,
-  },
+    name: 'Grupos',
+    value: 87,
+    href: 'https://google.com',
+    icon: function GoogleIcon() {
+      return (
+        <img src={Usuario} className="w-6 h-6 mr-2"/>
+      );
+    },
+  }
 ];
+
 
 const valueFormatter = function (number) {
   return "$ " + new Intl.NumberFormat("us").format(number).toString();
@@ -84,7 +48,7 @@ export default function DashboardPage() {
     <div className="flex flex-row bg-gray-100">
       <main className="main flex flex-col flex-grow md:ml-0 transition-all duration-150 ease-in mx-auto">
         <div className="main-content flex flex-col flex-grow p-4">
-          <div className="flex flex-col flex-grow rounded mt-4">
+          <div className="flex flex-col flex-grow rounded mt-1">
             <div className="grid grid-cols-1 gap-3 md:grid-cols-2 lg:gap-8">
               {/*Carrusel*/}
               <div className="col-span-3">
@@ -199,21 +163,21 @@ export default function DashboardPage() {
               </div>
               {/* END Card */}
             </div>
+            
             {/* <h3 className="text-tremor-default text-tremor-content dark:text-dark-tremor-content">
               Newsletter Revenue
             </h3>
             <p className="text-tremor-metric text-tremor-content-strong dark:text-dark-tremor-content-strong font-semibold">
               $34,567
             </p> */}
-            <AreaChart
-              className="mt-4 h-72"
-              data={chartdata}
-              index="date"
-              yAxisWidth={65}
-              categories={["SemiAnalysis", "The Pragmatic Engineer"]}
-              colors={["indigo", "cyan"]}
-              valueFormatter={valueFormatter}
-            />
+            <Card className="mt-4 h-90">
+              <h3 className="text-tremor-title text-tremor-content-strong dark:text-dark-tremor-content-strong font-medium">Proyectos creados</h3>
+              <p className="mt-4 text-tremor-default flex items-center justify-between text-tremor-content dark:text-dark-tremor-content">
+                <span>Fuentes</span>
+                <span>Subidas</span>
+              </p>
+              <BarList data={data} className="mt-2" />
+            </Card>
           </div>
         </div>
       </main>
