@@ -1,8 +1,10 @@
 import { createContext, useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { LuChevronFirst, LuChevronLast, LuMoreVertical } from "react-icons/lu";
-import Logo from "../../../../assets/john-doe-image.png";
+import Logo from "../../../../assets/DIDAC.png";
 import LogoDidac from "../../../../assets/LogoDidactik.png";
+import UserPhoto from "../../../../assets/user.png";
+import LogoSolo from "../../../../assets/LogoAloneBlue.png";
 
 const SidebarContext = createContext();
 
@@ -13,7 +15,7 @@ export function Sidebar({ children }) {
       <nav className="h-full flex flex-col border-r shadow-sm">
         <div className="p-4 pb-2 flex justify-between items-center relative">
           <img
-            src={expanded ? LogoDidac : Logo}
+            src={expanded ? LogoDidac : LogoSolo}
             className={` transition-all ${expanded ? "w-32" : "w-[2.1rem]"}`}
             alt=""
           />
@@ -30,7 +32,7 @@ export function Sidebar({ children }) {
           <ul className="flex-1 px-3">{children}</ul>
         </SidebarContext.Provider>
         <div className="border-t flex p-3">
-          <img src="" className="w-10 h-10 rounded-md" />
+          <img src={UserPhoto} className="w-10 h-10 rounded-md" />
           <div
             className={`flex justify-between items-center overflow-hidden transition-all ${
               expanded ? "w-52 ml-3" : "w-0"

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, Metric, Text } from '@tremor/react';
+import { Card, Metric, Text, Button, Dialog, DialogPanel, DatePicker } from '@tremor/react';
 import iconCFlenguajes from '../assets/iconCFlenguajes.svg';
 import iconCFhumano from '../assets/iconCFhumano.svg';
 import iconCFetica from '../assets/iconCFetica.svg';
@@ -7,13 +7,14 @@ import iconCFsaberes from '../assets/iconCFsaberes.svg';
 
 
 export const PlaneacionesPage = () => {
+
+  const [isOpen, setIsOpen] = React.useState(false);
+
   return (
-    <div className="flex flex-row min-h-screen bg-gray-200 text-gray-1000 cont mt-14 mb-4">
+    <div className="flex flex-row min-h-screen bg-gray-200 text-gray-1000 cont mt-2 mb-2">
       <main className="main flex flex-col flex-grow md:ml-0 transition-all duration-150 ease-in mx-auto bg-dark-tremor-brand-faint">
         <div className="main-content flex flex-col flex-grow p-4">
-
-          <div className="flex flex-col flex-grow rounded mt-4">
-
+          <div className="flex flex-col flex-grow rounded mt-2">
             {/* Barra de busqueda */}
             <form>
               <div className="relative flex items-center">
@@ -26,7 +27,7 @@ export const PlaneacionesPage = () => {
                 <button type="submit" className="mb-1 text-white absolute end-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Search</button>
               </div>
             </form>
-
+            {/* Cartas de Planeaciones */}
             <div className="grid grid-cols-1 gap-4 md:grid-cols-4 lg:gap-8 mt-4">
 
               {/* Card */}
@@ -87,7 +88,37 @@ export const PlaneacionesPage = () => {
                 </Card>
               </a>
 
+
+
             </div>
+            {/* Boton de crear Planeaciones */}
+            <div className='mt-4'>
+            <Button className="mx-auto block" onClick={() => setIsOpen(true)}>Crea tu Planeación!</Button>
+              <Dialog open={isOpen} onClose={(val) => setIsOpen(val)} static={true}>
+                <DialogPanel>
+                  <form>
+                    <h3 className="text-lg font-semibold text-tremor-content-strong dark:text-dark-tremor-content-strong">
+                      Formulario de Planeaciones
+                    </h3>
+                    <div>
+                      <p className="mt-2 leading-6 text-tremor-default text-tremor-content">
+                        Fecha de Inicio
+                      </p>
+                      <DatePicker />
+                      <p className="mt-2 leading-6 text-tremor-default text-tremor-content">
+                        Fecha de Inicio
+                      </p>
+                      <DatePicker />
+                    </div>
+
+                    <Button className="mt-8 w-full" onClick={() => setIsOpen(false)}>
+                      Crear Planeación
+                    </Button>
+                  </form>
+                </DialogPanel>
+              </Dialog>
+            </div>
+            {/* Final de Boton de crear Planeaciones */}
           </div>
         </div>
       </main>
