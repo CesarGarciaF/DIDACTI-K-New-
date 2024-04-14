@@ -24,7 +24,7 @@ export const SettingsPage = () => {
                 </p>
                 <Divider>Datos generales</Divider>
                 <div>
-                  <TextInput placeholder="Correo Electronico" type="email" />;
+                  <TextInput placeholder="Correo Electronico" type="email" />
                   <TextInput placeholder="Type password here" type="password" />
                 </div>
               </Card>
