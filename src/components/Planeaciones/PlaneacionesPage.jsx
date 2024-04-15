@@ -4,6 +4,9 @@ import iconCFlenguajes from '../../assets/iconCFlenguajes.svg';
 import iconCFhumano from '../../assets/iconCFhumano.svg';
 import iconCFetica from '../../assets/iconCFetica.svg';
 import iconCFsaberes from '../../assets/iconCFsaberes.svg';
+import { Select, SelectItem } from '@tremor/react';
+import Astroboys from '../../assets/astroboys.jpg';
+
 
 
 export const PlaneacionesPage = () => {
@@ -18,13 +21,12 @@ export const PlaneacionesPage = () => {
             {/* Barra de busqueda */}
             <form>
               <div className="relative flex items-center">
-                <input
-                  type="search"
-                  id="default-search"
-                  className="ml-3 block w-full p-4 ps-10 text-sm text-gray-900 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                  placeholder={"Search"}
-                />
-                <button type="submit" className="mb-1 text-white absolute end-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Search</button>
+                <Select placeholder='Selecciona un campo formativo'>
+                  <SelectItem value="1">Lenguajes</SelectItem>
+                  <SelectItem value="2">Saberes y Pensamiento Científico</SelectItem>
+                  <SelectItem value="3">De lo Humano y lo Comunitario</SelectItem>
+                  <SelectItem value="4">Ética, Naturaleza y Sociedades</SelectItem>
+                </Select>
               </div>
             </form>
             {/* Cartas de Planeaciones */}
@@ -94,7 +96,7 @@ export const PlaneacionesPage = () => {
 
             {/* Boton de crear Planeaciones */}
             <div className='mt-4'>
-            <Button className="mx-auto block" onClick={() => setIsOpen(true)}>Crea tu Planeación!</Button>
+              <Button className="mx-auto block" onClick={() => setIsOpen(true)}>Crea tu Planeación!</Button>
               <Dialog open={isOpen} onClose={(val) => setIsOpen(val)} static={true}>
                 <DialogPanel>
                   <form>
@@ -105,11 +107,11 @@ export const PlaneacionesPage = () => {
                     <div className='grid grid-cols-2 gap-4'>
                       <p className="mt-2 leading-6 text-tremor-default text-tremor-content">
                         Fecha de Inicio
-                        <DatePicker/>
+                        <DatePicker />
                       </p>
                       <p className="mt-2 leading-6 text-tremor-default text-tremor-content">
                         Fecha de Inicio
-                        <DatePicker/>
+                        <DatePicker />
                       </p>
                     </div>
 
@@ -150,7 +152,7 @@ export const PlaneacionesPage = () => {
 
             {/* Boton de Editar */}
             <div className='mt-4'>
-            <Button className="mx-auto block" onClick={() => setIsOpen(true)}>Editar</Button>
+              <Button className="mx-auto block" onClick={() => setIsOpen(true)}>Editar</Button>
               <Dialog open={isOpen} onClose={(val) => setIsOpen(val)} static={true}>
                 <DialogPanel>
                   <form>
@@ -161,11 +163,11 @@ export const PlaneacionesPage = () => {
                     <div className='grid grid-cols-2 gap-4'>
                       <p className="mt-2 leading-6 text-tremor-default text-tremor-content">
                         Fecha de Inicio
-                        <DatePicker/>
+                        <DatePicker />
                       </p>
                       <p className="mt-2 leading-6 text-tremor-default text-tremor-content">
                         Fecha de Inicio
-                        <DatePicker/>
+                        <DatePicker />
                       </p>
                     </div>
 
@@ -202,7 +204,174 @@ export const PlaneacionesPage = () => {
                 </DialogPanel>
               </Dialog>
             </div>
-            {/* Fin de Boton de Editar */}
+
+            <div className="container mx-auto flex flex-wrap">
+
+              <div className="w-full md:w-1/3 lg:w-1/3 p-2">
+                <div className="relative flex flex-col mt-6 text-gray-700 bg-white shadow-md bg-clip-border rounded-xl">
+                  <div className="relative h-56 mx-4 mt-6 overflow-hidden text-white shadow-lg bg-clip-border rounded-xl bg-blue-gray-500 shadow-blue-gray-500/40">
+                    <img src={Astroboys} alt="image" />
+                  </div>
+                  <div className="p-6">
+                    <div className="grid grid-cols-2">
+                      <p className="block font-sans text-base antialiased font-light leading-relaxed text-inherit">
+                        <span className="font-bold">Numero de fases:</span> 10
+                      </p>
+                      <p className="block font-sans text-base antialiased font-light leading-relaxed text-inherit">
+                        <span className="font-bold">Numero de sesiones:</span> 12
+                      </p>
+                      <p className="block font-sans text-base antialiased font-light leading-relaxed text-inherit">
+                        <span className="font-bold">Inicia:</span> 22 / 10 / 2023
+                      </p>
+                      <p className="block font-sans text-base antialiased font-light leading-relaxed text-inherit">
+                        <span className="font-bold">Termina:</span> 22 / 10 / 2024
+                      </p>
+                    </div>
+                  </div>
+                  <div className="p-6 pt-0 flex justify-end">
+                    <div>
+                      <button
+                        className="m-2 align-middle select-none font-sans font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg bg-red-600 text-white shadow-md shadow-gray-900/10 hover:shadow-lg hover:shadow-gray-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none"
+                        type="button"
+                      >
+                        Eliminar
+                      </button>
+                      <button
+                        className="align-middle select-none font-sans font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg bg-blue-600 text-white shadow-md shadow-gray-900/10 hover:shadow-lg hover:shadow-gray-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none"
+                        type="button"
+                        onClick={() => setIsOpen(true)}
+                      >
+                        Editar
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="w-full md:w-1/3 lg:w-1/3 p-2">
+                <div className="relative flex flex-col mt-6 text-gray-700 bg-white shadow-md bg-clip-border rounded-xl">
+                  <div className="relative h-56 mx-4 mt-6 overflow-hidden text-white shadow-lg bg-clip-border rounded-xl bg-blue-gray-500 shadow-blue-gray-500/40">
+                    <img src={Astroboys} alt="image" />
+                  </div>
+                  <div className="p-6">
+                    <div className="grid grid-cols-2">
+                      <p className="block font-sans text-base antialiased font-light leading-relaxed text-inherit">
+                        <span className="font-bold">Numero de fases:</span> 10
+                      </p>
+                      <p className="block font-sans text-base antialiased font-light leading-relaxed text-inherit">
+                        <span className="font-bold">Numero de sesiones:</span> 12
+                      </p>
+                      <p className="block font-sans text-base antialiased font-light leading-relaxed text-inherit">
+                        <span className="font-bold">Inicia:</span> 22 / 10 / 2023
+                      </p>
+                      <p className="block font-sans text-base antialiased font-light leading-relaxed text-inherit">
+                        <span className="font-bold">Termina:</span> 22 / 10 / 2024
+                      </p>
+                    </div>
+                  </div>
+                  <div className="p-6 pt-0 flex justify-end">
+                    <div>
+                      <button
+                        className="m-2 align-middle select-none font-sans font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg bg-red-600 text-white shadow-md shadow-gray-900/10 hover:shadow-lg hover:shadow-gray-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none"
+                        type="button"
+                      >
+                        Eliminar
+                      </button>
+                      <button
+                        className="align-middle select-none font-sans font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg bg-blue-600 text-white shadow-md shadow-gray-900/10 hover:shadow-lg hover:shadow-gray-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none"
+                        type="button"
+                        onClick={() => setIsOpen(true)}
+                      >
+                        Editar
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="w-full md:w-1/3 lg:w-1/3 p-2">
+                <div className="relative flex flex-col mt-6 text-gray-700 bg-white shadow-md bg-clip-border rounded-xl">
+                  <div className="relative h-56 mx-4 mt-6 overflow-hidden text-white shadow-lg bg-clip-border rounded-xl bg-blue-gray-500 shadow-blue-gray-500/40">
+                    <img src={Astroboys} alt="image" />
+                  </div>
+                  <div className="p-6">
+                    <div className="grid grid-cols-2">
+                      <p className="block font-sans text-base antialiased font-light leading-relaxed text-inherit">
+                        <span className="font-bold">Numero de fases:</span> 10
+                      </p>
+                      <p className="block font-sans text-base antialiased font-light leading-relaxed text-inherit">
+                        <span className="font-bold">Numero de sesiones:</span> 12
+                      </p>
+                      <p className="block font-sans text-base antialiased font-light leading-relaxed text-inherit">
+                        <span className="font-bold">Inicia:</span> 22 / 10 / 2023
+                      </p>
+                      <p className="block font-sans text-base antialiased font-light leading-relaxed text-inherit">
+                        <span className="font-bold">Termina:</span> 22 / 10 / 2024
+                      </p>
+                    </div>
+                  </div>
+                  <div className="p-6 pt-0 flex justify-end">
+                    <div>
+                      <button
+                        className="m-2 align-middle select-none font-sans font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg bg-red-600 text-white shadow-md shadow-gray-900/10 hover:shadow-lg hover:shadow-gray-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none"
+                        type="button"
+                      >
+                        Eliminar
+                      </button>
+                      <button
+                        className="align-middle select-none font-sans font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg bg-blue-600 text-white shadow-md shadow-gray-900/10 hover:shadow-lg hover:shadow-gray-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none"
+                        type="button"
+                        onClick={() => setIsOpen(true)}
+                      >
+                        Editar
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="w-full md:w-1/3 lg:w-1/3 p-2">
+                <div className="relative flex flex-col mt-6 text-gray-700 bg-white shadow-md bg-clip-border rounded-xl">
+                  <div className="relative h-56 mx-4 mt-6 overflow-hidden text-white shadow-lg bg-clip-border rounded-xl bg-blue-gray-500 shadow-blue-gray-500/40">
+                    <img src={Astroboys} alt="image" />
+                  </div>
+                  <div className="p-6">
+                    <div className="grid grid-cols-2">
+                      <p className="block font-sans text-base antialiased font-light leading-relaxed text-inherit">
+                        <span className="font-bold">Numero de fases:</span> 10
+                      </p>
+                      <p className="block font-sans text-base antialiased font-light leading-relaxed text-inherit">
+                        <span className="font-bold">Numero de sesiones:</span> 12
+                      </p>
+                      <p className="block font-sans text-base antialiased font-light leading-relaxed text-inherit">
+                        <span className="font-bold">Inicia:</span> 22 / 10 / 2023
+                      </p>
+                      <p className="block font-sans text-base antialiased font-light leading-relaxed text-inherit">
+                        <span className="font-bold">Termina:</span> 22 / 10 / 2024
+                      </p>
+                    </div>
+                  </div>
+                  <div className="p-6 pt-0 flex justify-end">
+                    <div>
+                      <button
+                        className="m-2 align-middle select-none font-sans font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg bg-red-600 text-white shadow-md shadow-gray-900/10 hover:shadow-lg hover:shadow-gray-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none"
+                        type="button"
+                      >
+                        Eliminar
+                      </button>
+                      <button
+                        className="align-middle select-none font-sans font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg bg-blue-600 text-white shadow-md shadow-gray-900/10 hover:shadow-lg hover:shadow-gray-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none"
+                        type="button"
+                        onClick={() => setIsOpen(true)}
+                      >
+                        Editar
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
           </div>
         </div>
       </main>
