@@ -84,7 +84,7 @@ export const GroupPage = () => {
                 </div>
               </div>
             </div>
-            
+
             <div className="w-full md:w-1/3 lg:w-1/3 p-2">
               <div className="relative flex flex-col mt-6 text-gray-700 bg-white shadow-md bg-clip-border rounded-xl">
                 <div className="relative h-56 mx-4 mt-6 overflow-hidden text-white shadow-lg bg-clip-border rounded-xl bg-blue-gray-500 shadow-blue-gray-500/40">

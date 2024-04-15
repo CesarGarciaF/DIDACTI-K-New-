@@ -23,7 +23,7 @@ function CalendarPageV2() {
   useEffect(() => {
     getEvents();
   }, []);
-
+ 
   return (
     <div className="flex flex-row bg-gray-100">
       <main className="main flex flex-col flex-grow md:ml-0 transition-all duration-150 ease-in mx-auto">

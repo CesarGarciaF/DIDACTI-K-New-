@@ -6,12 +6,14 @@ import iconCFetica from '../../assets/iconCFetica.svg';
 import iconCFsaberes from '../../assets/iconCFsaberes.svg';
 import { Select, SelectItem } from '@tremor/react';
 import Astroboys from '../../assets/astroboys.jpg';
+import { FloatButton, Modal } from 'antd';
 
 
 
 export const PlaneacionesPage = () => {
 
   const [isOpen, setIsOpen] = React.useState(false);
+  const [Open, setOpen] = React.useState(false);
 
   return (
     <div className="flex flex-row min-h-screen bg-gray-200 text-gray-1000 cont mt-2 mb-2">
@@ -96,7 +98,6 @@ export const PlaneacionesPage = () => {
 
             {/* Boton de crear Planeaciones */}
             <div className='mt-4'>
-              <Button className="mx-auto block" onClick={() => setIsOpen(true)}>Crea tu Planeación!</Button>
               <Dialog open={isOpen} onClose={(val) => setIsOpen(val)} static={true}>
                 <DialogPanel>
                   <form>
@@ -152,8 +153,8 @@ export const PlaneacionesPage = () => {
 
             {/* Boton de Editar */}
             <div className='mt-4'>
-              <Button className="mx-auto block" onClick={() => setIsOpen(true)}>Editar</Button>
-              <Dialog open={isOpen} onClose={(val) => setIsOpen(val)} static={true}>
+            <FloatButton onClick={() => setOpen(true)} tooltip="Crear Grupo" />
+              <Dialog open={Open} onClose={(val) => setOpen(val)} static={true}>
                 <DialogPanel>
                   <form>
                     <h3 className="text-lg font-semibold text-tremor-content-strong dark:text-dark-tremor-content-strong">
@@ -239,7 +240,7 @@ export const PlaneacionesPage = () => {
                       <button
                         className="align-middle select-none font-sans font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg bg-blue-600 text-white shadow-md shadow-gray-900/10 hover:shadow-lg hover:shadow-gray-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none"
                         type="button"
-                        onClick={() => setIsOpen(true)}
+                        onClick={() => setOpen(true)}
                       >
                         Editar
                       </button>
@@ -280,7 +281,7 @@ export const PlaneacionesPage = () => {
                       <button
                         className="align-middle select-none font-sans font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg bg-blue-600 text-white shadow-md shadow-gray-900/10 hover:shadow-lg hover:shadow-gray-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none"
                         type="button"
-                        onClick={() => setIsOpen(true)}
+                        onClick={() => setOpen(true)}
                       >
                         Editar
                       </button>
@@ -321,7 +322,7 @@ export const PlaneacionesPage = () => {
                       <button
                         className="align-middle select-none font-sans font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg bg-blue-600 text-white shadow-md shadow-gray-900/10 hover:shadow-lg hover:shadow-gray-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none"
                         type="button"
-                        onClick={() => setIsOpen(true)}
+                        onClick={() => setOpen(true)}
                       >
                         Editar
                       </button>
@@ -362,7 +363,7 @@ export const PlaneacionesPage = () => {
                       <button
                         className="align-middle select-none font-sans font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg bg-blue-600 text-white shadow-md shadow-gray-900/10 hover:shadow-lg hover:shadow-gray-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none"
                         type="button"
-                        onClick={() => setIsOpen(true)}
+                        onClick={() => setOpen(true)}
                       >
                         Editar
                       </button>
