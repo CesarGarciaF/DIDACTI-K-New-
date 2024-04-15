@@ -9,7 +9,8 @@ import ErrorPage from "./pages/ErrorPage";
 
 import DashboardPage from "./components/DashboardPage";
 import GroupPage from "./components/GroupPage";
-import PlaneacionesPage from "./components/PlaneacionesPage";
+import PlaneacionesPage from "./components/Planeaciones/PlaneacionesPage";
+import Cards from "./components/Planeaciones/components/Cards";
 import CursosPage from "./components/CursosPage";
 //
 import CursoUno from "./components/Cursos/CursoUno";
@@ -47,6 +48,7 @@ function App() {
               <Route path="dashboard" element={<DashboardPage />} />
               <Route path="grupos" element={<GroupPage />} />
               <Route path="planeaciones" element={<PlaneacionesPage />} />
+              <Route path="cards" element={<Cards />} />
               <Route path="cursos" element={<CursosPage />} />
               <Route path="sponsors" element={<PatrocinadoresPage />} />
               <Route path="calendario" element={<CalendarPageV2 />} />
