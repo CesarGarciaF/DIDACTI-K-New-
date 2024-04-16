@@ -3,7 +3,7 @@ import "../MainPage/MainPage.css";
 import PickMeals from "../../assets/pick-meals-image.png";
 import ChooseMeals from "../../assets/choose-image.png";
 import DeliveryMeals from "../../assets/delivery-image.png";
-
+ import './Work.css';
 const Work = () => {
   const workInfoData = [
     {

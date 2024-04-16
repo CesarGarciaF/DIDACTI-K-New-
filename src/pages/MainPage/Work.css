@@ -1,0 +1,20 @@
+.work-section-wrapper {
+    margin-top: 50px;
+  }
+  
+  .work-section-top {
+    text-align: center; /* Alinea el texto al centro */
+    margin-bottom: 30px; /* Espacio inferior para separar del siguiente elemento */
+    margin-top: 10px;
+  }
+  
+  .work-section-bottom {
+    margin-top: 20px;
+
+  }
+
+  .primary-heading {
+    margin-top: 20px;
+  }
+  
+

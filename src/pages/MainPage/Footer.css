@@ -1,0 +1,39 @@
+.footer-wrapper {
+    background-color: #1f4b58;
+    color: aliceblue;
+    padding: 50px;
+  }
+  
+  .footer-section-one span {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    color: aliceblue;
+  }
+  
+  .footer-icons {
+    display: flex;
+    gap: 10px;
+    font-size: 24px;
+    color: aliceblue;
+    justify-content: flex-start; /* Alinea los iconos a la izquierda */
+    align-items: center; /* Alinea verticalmente los iconos al centro */
+  }
+  
+  .footer-icons > * {
+    color: aliceblue;
+  }
+  
+  .footer-section-two {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .footer-section-columns span {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    color: aliceblue;
+  }
+  
