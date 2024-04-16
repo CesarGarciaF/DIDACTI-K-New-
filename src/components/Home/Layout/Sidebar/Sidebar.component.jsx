@@ -1,15 +1,18 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { LuChevronFirst, LuChevronLast, LuMoreVertical } from "react-icons/lu";
-import Logo from "../../../../assets/DIDAC.png";
 import LogoDidac from "../../../../assets/LogoDidactik.png";
 import UserPhoto from "../../../../assets/user.png";
 import LogoSolo from "../../../../assets/LogoAloneBlue.png";
+
+import { useUsers } from "../../../../context/UserContext";
 
 const SidebarContext = createContext();
 
 export function Sidebar({ children }) {
   const [expanded, setExpanded] = useState(true);
+  const { currentUser } = useUsers();
+
   return (
     <aside className="h-screen">
       <nav className="h-full flex flex-col border-r shadow-sm">
@@ -39,8 +42,10 @@ export function Sidebar({ children }) {
             }`}
           >
             <div className="leading-4">
-              <h4 className="font-semibold">Jorge Bernal</h4>
-              <span className="text-xs text-gray-600">jabe.4124@gmail.com</span>
+              <h4 className="font-semibold">{currentUser?.name}</h4>
+              <span className="text-xs text-gray-600">
+                {currentUser?.email}
+              </span>
             </div>
             <LuMoreVertical size={20} />
           </div>

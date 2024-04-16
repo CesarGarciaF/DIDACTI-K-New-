@@ -3,44 +3,26 @@ import { BarList, Card } from "@tremor/react";
 import { Carousel } from "antd";
 import astroboys from "../assets/astroboys.jpg";
 import LogoSolo from "../assets/LogoAloneBlue.png";
-import Usuario from "../assets/user.png"
+import Usuario from "../assets/user.png";
 
-const data = 
-[
+const data = [
   {
-    name: 'Planeaciones',
+    name: "Planeaciones",
     value: 47,
-    href: 'https://twitter.com/tremorlabs',
+    href: "https://twitter.com/tremorlabs",
     icon: function TwitterIcon() {
-      return (
-        <img src={LogoSolo} className="w-6 h-6 mr-2"/>
-      );
+      return <img src={LogoSolo} className="w-6 h-6 mr-2" />;
     },
   },
   {
-    name: 'Grupos',
+    name: "Grupos",
     value: 87,
-    href: 'https://google.com',
+    href: "https://google.com",
     icon: function GoogleIcon() {
-      return (
-        <img src={Usuario} className="w-6 h-6 mr-2"/>
-      );
+      return <img src={Usuario} className="w-6 h-6 mr-2" />;
     },
-  }
+  },
 ];
-
-
-const valueFormatter = function (number) {
-  return "$ " + new Intl.NumberFormat("us").format(number).toString();
-};
-
-const contentStyle = {
-  height: "160px",
-  color: "#fff",
-  lineHeight: "160px",
-  textAlign: "center",
-  background: "#FFF3C7",
-};
 
 export default function DashboardPage() {
   // const { logout } = useAuth();
@@ -163,7 +145,7 @@ export default function DashboardPage() {
               </div>
               {/* END Card */}
             </div>
-            
+
             {/* <h3 className="text-tremor-default text-tremor-content dark:text-dark-tremor-content">
               Newsletter Revenue
             </h3>
@@ -171,7 +153,9 @@ export default function DashboardPage() {
               $34,567
             </p> */}
             <Card className="mt-4 h-90">
-              <h3 className="text-tremor-title text-tremor-content-strong dark:text-dark-tremor-content-strong font-medium">Proyectos creados</h3>
+              <h3 className="text-tremor-title text-tremor-content-strong dark:text-dark-tremor-content-strong font-medium">
+                Proyectos creados
+              </h3>
               <p className="mt-4 text-tremor-default flex items-center justify-between text-tremor-content dark:text-dark-tremor-content">
                 <span>Fuentes</span>
                 <span>Subidas</span>

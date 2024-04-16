@@ -43,7 +43,9 @@ export function EventProvider({ children }) {
   };
 
   return (
-    <EventContext.Provider value={{ events, getEvents, createEvent }}>
+    <EventContext.Provider
+      value={{ events, getEvents, createEvent, updateEvent }}
+    >
       {children}
     </EventContext.Provider>
   );

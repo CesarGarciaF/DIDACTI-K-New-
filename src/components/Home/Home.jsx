@@ -33,12 +33,15 @@ import { Bars3Icon, BellIcon, XMarkIcon } from "@heroicons/react/24/outline";
 import { Breadcrumb } from "./Layout/Breadcrumb/Breadcrumb.component";
 import { Toolbar } from "./Layout/Toolbar/Toolbar.component";
 
+// import { useUsers } from "../../context/UserContext";
+
 const user = {
   name: "Tom Cook",
   email: "tom@example.com",
   imageUrl:
     "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
 };
+
 const navigation = [
   // { name: "Dashboard", href: "#", current: true },
   // { name: "Team", href: "#", current: false },
@@ -62,6 +65,9 @@ function Home() {
   const [darkTheme, setDarkTheme] = useState(true);
   const [sidebarClass, setSidebarClass] = useState("sidebar");
   const [isSwitched, setIsSwitched] = useState(false);
+
+  // const { currentUser, fetchUserById } = useUsers();
+  // const [error, setError] = useState(null);
 
   const toggleTheme = () => {
     setDarkTheme(!darkTheme);
@@ -96,21 +102,21 @@ function Home() {
             text={"Grupos"}
             link={"grupos"}
           />
-          <SidebarItem
+          {/* <SidebarItem
             icon={<LuBookMarked size={20} />}
             text={"Cursos"}
             link={"cursos"}
-          />
+          /> */}
           <SidebarItem
             icon={<LuBookOpen size={20} />}
             text={"Planeaciones"}
             link={"planeaciones"}
           />
-          <SidebarItem
+          {/* <SidebarItem
             icon={<LuUsers2 size={20} />}
             text={"Patrocinadores"}
             link={"sponsors"}
-          />
+          /> */}
           <SidebarItem
             icon={<LuSettings size={20} />}
             text={"Ajustes"}
