@@ -9,7 +9,7 @@ const Navbar = () => {
       <div className="nav-logo-container">
         <img src={LogoDidactik} alt="" />
       </div>
-      <Link to="/login" className="primary-button">
+      <Link to="/login" className="primary-button" >
         Iniciar Sesion
       </Link>
       <div className="navbar-menu-container">

@@ -1,0 +1,39 @@
+.primary-subheading {
+    font-size: 30px;
+    margin-bottom: -15px;
+    color: #f9af0e;
+  }
+
+.primary-heading {
+    font-size: 3.5rem; /* Tamaño de la fuente */
+    font-weight: bold; /* Peso de la fuente en negrita */
+    text-align: left; /* Alineación centrada del texto */
+    margin: 0px 0; /* Margen superior e inferior */
+    color: #333; /* Color del texto (por ejemplo, negro) */
+    margin-top: 5px; /* Espacio superior para separar del elemento anterior */
+
+  }
+
+  .primary-text {
+    font-size: 1.3rem;
+    line-height: 1.5; /* Ajusta este valor según sea necesario */
+    text-align: left; /* Alineación centrada del texto */
+    margin: 10px 0; /* Margen superior e inferior */
+
+  }
+
+  .about-section-image-container {
+
+    z-index: 1; /* Ajusta el z-index para que la imagen esté por encima del fondo azul */
+  }
+
+  .blue-rectangle {
+    position: absolute; /* Establece posicionamiento absoluto para el rectángulo */
+    bottom: 0; /* Lo posiciona en la parte inferior del contenedor principal */
+    left: 0; /* Lo alinea a la izquierda */
+    width: 100%; /* Ancho del rectángulo para abarcar toda la página */
+    height: 150px; /* Altura del rectángulo azul */
+    background-color: #1f4b58; /* Color de fondo azul */
+    z-index: -0; /* Envía el rectángulo hacia atrás, por debajo del contenido */
+    width: 100%;
+}
