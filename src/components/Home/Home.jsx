@@ -1,6 +1,7 @@
+import { useAuth } from "../../context/AuthContext";
 import React, { useState, useRef, useEffect } from "react";
 import { Layout, theme } from "antd";
-import { Outlet, useLocation } from "react-router-dom";
+import { Outlet, useLocation, useNavigate, Link } from "react-router-dom";
 import {
   LuActivity,
   LuBookMarked,
@@ -12,19 +13,9 @@ import {
   LuSettings,
   LuUsers2,
 } from "react-icons/lu";
-import Logo from "../../assets/Logo.svg";
-import MenuList from "./MenuList";
-import ToggleThemeButton from "./ToggleThemeButton";
-import { AreaChart } from "@tremor/react";
 import "./Home.css";
 
 import { Sidebar, SidebarItem } from "./Layout/Sidebar/Sidebar.component";
-
-// Prime React components
-import { BreadCrumb } from "primereact/breadcrumb";
-import { MegaMenu } from "primereact/megamenu";
-import { Avatar } from "primereact/avatar";
-import { PrimeIcons } from "primereact/api";
 import "primeicons/primeicons.css";
 
 import { Fragment } from "react";
@@ -35,52 +26,61 @@ import { Toolbar } from "./Layout/Toolbar/Toolbar.component";
 
 // import { useUsers } from "../../context/UserContext";
 
-const user = {
+const userP = {
   name: "Tom Cook",
   email: "tom@example.com",
   imageUrl:
     "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
 };
 
-const navigation = [
-  // { name: "Dashboard", href: "#", current: true },
-  // { name: "Team", href: "#", current: false },
-  // { name: "Projects", href: "#", current: false },
-  // { name: "Calendar", href: "#", current: false },
-  // { name: "Reports", href: "#", current: false },
-];
-const userNavigation = [
-  { name: "Your Profile", href: "/home/profile" },
-  { name: "Settings", href: "#" },
-  { name: "Sign out", href: "/logout" },
-];
-
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
-
-const { Header, Sider, Footer } = Layout;
 
 function Home() {
   const [darkTheme, setDarkTheme] = useState(true);
   const [sidebarClass, setSidebarClass] = useState("sidebar");
   const [isSwitched, setIsSwitched] = useState(false);
+  const {
+    user,
+    signin,
+    isAuthenticated,
+    logout,
+    errors: signinErrors,
+  } = useAuth();
+  const navigate = useNavigate();
+  const navigation = [
+    // { name: "Dashboard", href: "#", current: true },
+    // { name: "Team", href: "#", current: false },
+    // { name: "Projects", href: "#", current: false },
+    // { name: "Calendar", href: "#", current: false },
+    // { name: "Reports", href: "#", current: false },
+  ];
+  const userNavigation = [
+    { name: "Your Profile", href: "/home/profile" },
+    { name: "Settings", href: "#" },
+    { name: "Sign out", onclick: () => logout() },
+  ];
+
+  useEffect(() => {
+    if (!isAuthenticated) navigate("/login");
+  }, [isAuthenticated]);
 
   // const { currentUser, fetchUserById } = useUsers();
   // const [error, setError] = useState(null);
 
-  const toggleTheme = () => {
-    setDarkTheme(!darkTheme);
-  };
+  // const toggleTheme = () => {
+  //   setDarkTheme(!darkTheme);
+  // };
 
-  const {
-    token: { colorBgContainer },
-  } = theme.useToken();
+  // const {
+  //   token: { colorBgContainer },
+  // } = theme.useToken();
 
-  const cambiarClase = () => {
-    setSidebarClass(() => (isSwitched ? "sidebar" : "sidebar-toggle"));
-    setIsSwitched(!isSwitched);
-  };
+  // const cambiarClase = () => {
+  //   setSidebarClass(() => (isSwitched ? "sidebar" : "sidebar-toggle"));
+  //   setIsSwitched(!isSwitched);
+  // };
 
   return (
     <>
@@ -173,7 +173,7 @@ function Home() {
                               <span className="sr-only">Open user menu</span>
                               <img
                                 className="h-8 w-8 rounded-full"
-                                src={user.imageUrl}
+                                src={user?.avatar}
                                 alt=""
                               />
                             </Menu.Button>
@@ -188,7 +188,7 @@ function Home() {
                             leaveTo="transform opacity-0 scale-95"
                           >
                             <Menu.Items className="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
-                              {userNavigation.map((item) => (
+                              {/* {userNavigation.map((item) => (
                                 <Menu.Item key={item.name}>
                                   {({ active }) => (
                                     <a
@@ -202,7 +202,15 @@ function Home() {
                                     </a>
                                   )}
                                 </Menu.Item>
-                              ))}
+                              ))} */}
+
+                              <Menu.Item
+                                className="block px-4 py-2 text-sm text-gray-700"
+                                as="button"
+                                onClick={() => logout()}
+                              >
+                                Cerrar Sesión
+                              </Menu.Item>
                             </Menu.Items>
                           </Transition>
                         </Menu>
@@ -231,38 +239,22 @@ function Home() {
 
                 <Disclosure.Panel className="md:hidden">
                   <div className="space-y-1 px-2 pb-3 pt-2 sm:px-3">
-                    {navigation.map((item) => (
-                      <Disclosure.Button
-                        key={item.name}
-                        as="a"
-                        href={item.href}
-                        className={classNames(
-                          item.current
-                            ? "bg-gray-900 text-white"
-                            : "text-gray-300 hover:bg-gray-700 hover:text-white",
-                          "block rounded-md px-3 py-2 text-base font-medium"
-                        )}
-                        aria-current={item.current ? "page" : undefined}
-                      >
-                        {item.name}
-                      </Disclosure.Button>
-                    ))}
+                    <Disclosure.Button as="a" to={() => logout}>
+                      Cerrar Sesión
+                    </Disclosure.Button>
                   </div>
                   <div className="border-t border-gray-700 pb-3 pt-4">
                     <div className="flex items-center px-5">
                       <div className="flex-shrink-0">
                         <img
                           className="h-10 w-10 rounded-full"
-                          src={user.imageUrl}
+                          src={user?.photo}
                           alt=""
                         />
                       </div>
                       <div className="ml-3">
-                        <div className="text-base font-medium leading-none text-white">
-                          {user.name}
-                        </div>
                         <div className="text-sm font-medium leading-none text-gray-400">
-                          {user.email}
+                          {user?.email}
                         </div>
                       </div>
                       <button
@@ -274,18 +266,8 @@ function Home() {
                         <BellIcon className="h-6 w-6" aria-hidden="true" />
                       </button>
                     </div>
-                    <div className="mt-3 space-y-1 px-2">
-                      {userNavigation.map((item) => (
-                        <Disclosure.Button
-                          key={item.name}
-                          as="a"
-                          href={item.href}
-                          className="block rounded-md px-3 py-2 text-base font-medium text-gray-400 hover:bg-gray-700 hover:text-white"
-                        >
-                          {item.name}
-                        </Disclosure.Button>
-                      ))}
-                    </div>
+                    {/* <div className="mt-3 space-y-1 px-2">
+                    </div> */}
                   </div>
                 </Disclosure.Panel>
               </>

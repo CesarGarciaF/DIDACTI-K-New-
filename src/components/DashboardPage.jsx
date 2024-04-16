@@ -4,6 +4,7 @@ import { Carousel } from "antd";
 import astroboys from "../assets/astroboys.jpg";
 import LogoSolo from "../assets/LogoAloneBlue.png";
 import Usuario from "../assets/user.png";
+import { Link } from "react-router-dom";
 
 const data = [
   {
@@ -33,7 +34,7 @@ export default function DashboardPage() {
           <div className="flex flex-col flex-grow rounded mt-1">
             <div className="grid grid-cols-1 gap-3 md:grid-cols-2 lg:gap-8">
               {/*Carrusel*/}
-              <div className="col-span-3">
+              {/* <div className="col-span-3">
                 <Carousel autoplay className="overflow-hidden rounded-lg">
                   <div>
                     <img
@@ -64,7 +65,7 @@ export default function DashboardPage() {
                     />
                   </div>
                 </Carousel>
-              </div>
+              </div> */}
               {/*Carrusel*/}
 
               {/* Card */}
@@ -135,12 +136,12 @@ export default function DashboardPage() {
                 {/* END Body */}
 
                 {/* Action Link */}
-                <a
-                  href="planeaciones"
+                <Link
+                  to="planeaciones"
                   className="block bg-gray-50 p-3 text-center text-sm font-medium text-blue-600 hover:bg-gray-100 hover:bg-opacity-75 hover:text-blue-700 active:bg-gray-50 dark:bg-gray-900/50 dark:text-blue-400 dark:hover:bg-gray-900/75 dark:hover:text-blue-300 dark:active:bg-gray-900/50"
                 >
                   Ver todas las Actividades...
-                </a>
+                </Link>
                 {/* END Action Link */}
               </div>
               {/* END Card */}

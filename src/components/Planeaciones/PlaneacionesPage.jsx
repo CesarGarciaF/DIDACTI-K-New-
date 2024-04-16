@@ -10,10 +10,6 @@ import {
   TextInput,
 } from "@tremor/react";
 import { useFields } from "../../context/FieldContext";
-import iconCFlenguajes from "../../assets/iconCFlenguajes.svg";
-import iconCFhumano from "../../assets/iconCFhumano.svg";
-import iconCFetica from "../../assets/iconCFetica.svg";
-import iconCFsaberes from "../../assets/iconCFsaberes.svg";
 import { Select, SelectItem } from "@tremor/react";
 import Astroboys from "../../assets/astroboys.jpg";
 

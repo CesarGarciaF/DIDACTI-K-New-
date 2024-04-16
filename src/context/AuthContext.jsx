@@ -2,6 +2,7 @@ import { createContext, useContext, useEffect, useState } from "react";
 import {
   loginRequest,
   signupRequest,
+  profileRequest,
   verifyTokenRequest,
 } from "../services/AuthService";
 import Cookies from "js-cookie";
@@ -36,13 +37,23 @@ export const AuthProvider = ({ children }) => {
   const signin = async (user) => {
     try {
       const res = await loginRequest(user);
-      if (res.status === 200) setIsAuthenticated(true);
+      if (res.status === 200) {
+        profile();
+        setIsAuthenticated(true);
+      }
     } catch (error) {
-      console.log(error.response.data);
-
       if (Array.isArray(error.response.data))
         return setErrors(error.response.data);
       setErrors([error.response.data]);
+    }
+  };
+
+  const profile = async (user) => {
+    try {
+      const res = await profileRequest(user);
+      if (res.status === 200) setUser(res.data);
+    } catch (err) {
+      if (Array.isArray(err.response.data)) return setErrors(err.response.data);
     }
   };
 

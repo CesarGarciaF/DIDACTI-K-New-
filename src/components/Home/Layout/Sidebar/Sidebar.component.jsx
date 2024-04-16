@@ -5,13 +5,16 @@ import LogoDidac from "../../../../assets/LogoDidactik.png";
 import UserPhoto from "../../../../assets/user.png";
 import LogoSolo from "../../../../assets/LogoAloneBlue.png";
 
-import { useUsers } from "../../../../context/UserContext";
+// import { useUsers } from "../../../../context/UserContext";
+import { useAuth } from "../../../../context/AuthContext";
 
 const SidebarContext = createContext();
 
 export function Sidebar({ children }) {
   const [expanded, setExpanded] = useState(true);
-  const { currentUser } = useUsers();
+  // const { currentUser } = useUsers();
+  const { user } = useAuth();
+  const currentUser = user;
 
   return (
     <aside className="h-screen">
