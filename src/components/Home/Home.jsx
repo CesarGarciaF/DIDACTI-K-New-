@@ -41,13 +41,7 @@ function Home() {
   const [darkTheme, setDarkTheme] = useState(true);
   const [sidebarClass, setSidebarClass] = useState("sidebar");
   const [isSwitched, setIsSwitched] = useState(false);
-  const {
-    user,
-    signin,
-    isAuthenticated,
-    logout,
-    errors: signinErrors,
-  } = useAuth();
+  const { user, isAuthenticated, logout } = useAuth();
   const navigate = useNavigate();
   const navigation = [
     // { name: "Dashboard", href: "#", current: true },

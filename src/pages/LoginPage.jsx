@@ -36,7 +36,9 @@ export default function LoginPage() {
             Ingresa a tu cuenta
           </h1>
           {signinErrors.map((error, i) => (
-            <div className="bg-red-500 p-2 text-white">{error}</div>
+            <div key={i} className="bg-red-500 p-2 text-white">
+              {error}
+            </div>
           ))}
           <form className="mt-6" onSubmit={onSubmit}>
             <div>

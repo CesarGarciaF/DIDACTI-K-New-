@@ -5,7 +5,6 @@ import {
   profileRequest,
   verifyTokenRequest,
 } from "../services/AuthService";
-import Cookies from "js-cookie";
 
 export const AuthContext = createContext();
 
@@ -26,6 +25,7 @@ export const AuthProvider = ({ children }) => {
   const signup = async (user) => {
     try {
       const res = await signupRequest(user);
+      sessionStorage.setItem("token", res.data.token);
 
       setUser(res.data);
       setIsAuthenticated(true);
@@ -37,9 +37,10 @@ export const AuthProvider = ({ children }) => {
   const signin = async (user) => {
     try {
       const res = await loginRequest(user);
+      sessionStorage.setItem("token", res.data.token);
       if (res.status === 200) {
-        profile();
         setIsAuthenticated(true);
+        profile();
       }
     } catch (error) {
       if (Array.isArray(error.response.data))
@@ -58,7 +59,7 @@ export const AuthProvider = ({ children }) => {
   };
 
   const logout = () => {
-    Cookies.remove("token");
+    sessionStorage.removeItem("token");
     setIsAuthenticated(false);
     setUser(null);
   };
@@ -73,27 +74,34 @@ export const AuthProvider = ({ children }) => {
   }, [errors]);
 
   useEffect(() => {
-    async function checkLogin() {
-      const cookies = Cookies.get();
+    const token = sessionStorage.getItem("token");
 
-      if (!cookies.token) {
-        setIsAuthenticated(false);
-        setUser(null);
-        return;
+    if (token) {
+      async function checkLogin() {
+        try {
+          const res = await verifyTokenRequest();
+          console.log(res.data);
+          if (!res.data) {
+            setIsAuthenticated(false);
+            setUser(null);
+            sessionStorage.removeItem("token");
+            return;
+          }
+
+          setIsAuthenticated(true);
+          setUser(res.data);
+        } catch (error) {
+          setIsAuthenticated(false);
+          setUser(null);
+          sessionStorage.removeItem("token");
+        }
       }
-
-      try {
-        const res = await verifyTokenRequest(cookies.token);
-        if (!res.data) return setIsAuthenticated(false);
-
-        setIsAuthenticated(true);
-        setUser(res.data);
-      } catch (error) {
-        setIsAuthenticated(false);
-        setUser(null);
-      }
+      checkLogin();
+    } else {
+      setIsAuthenticated(false);
+      setUser(null);
+      return;
     }
-    checkLogin();
   }, []);
 
   return (
