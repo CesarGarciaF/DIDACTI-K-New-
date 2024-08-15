@@ -16,7 +16,24 @@ export default function LoginPage() {
     if (isAuthenticated) navigate("/home");
   }, [isAuthenticated]);
 
+  const validateInput = (values) => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(values.email)) {
+      return "El formato del correo electrónico es inválido";
+    }
+    if (values.password.length < 8) {
+      return "La contraseña debe tener al menos 8 caracteres";
+    }
+    // Puedes añadir más validaciones aquí según sea necesario.
+    return null;
+  };
+
   const onSubmit = handleSubmit(async (values) => {
+    const validationError = validateInput(values);
+    if (validationError) {
+      alert(validationError);
+      return;
+    }
     await signin(values);
   });
 
@@ -50,8 +67,8 @@ export default function LoginPage() {
                 {...register("email", { required: true })}
                 className="w-full px-4 py-3 rounded-lg bg-gray-200 mt-2 border focus:border-blue-500 focus:bg-white focus:outline-none"
               />
-              {errors.username && (
-                <p className="text-red-500">El usuario es requerido</p>
+              {errors.email && (
+                <p className="text-red-500">El correo electrónico es requerido</p>
               )}
             </div>
 
