@@ -1,9 +1,9 @@
 import React, { useState, useRef } from "react";
 import { BarList, Card } from "@tremor/react";
 import { Carousel } from "antd";
-import astroboys from "../assets/astroboys.jpg";
-import LogoSolo from "../assets/LogoAloneBlue.png";
-import Usuario from "../assets/user.png";
+import astroboys from "../../assets/astroboys.jpg";
+import LogoSolo from "../../assets/LogoAloneBlue.png";
+import Usuario from "../../assets/user.png";
 import { Link } from "react-router-dom";
 
 const data = [

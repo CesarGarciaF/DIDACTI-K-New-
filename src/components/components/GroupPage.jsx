@@ -2,10 +2,10 @@ import React, { useEffect, useState, useRef } from "react";
 import { FloatButton, Modal } from "antd";
 import { Select, SelectItem, TextInput } from "@tremor/react";
 import { useForm } from "react-hook-form";
-import { useGroup } from "../context/GroupContext";
-import { useFields } from "../context/FieldContext";
-import Astroboys from "../assets/astroboys.jpg";
-import { uploadImageToCloudinary } from "../services/CloudinaryService";
+import { useGroup } from "../../context/GroupContext";
+import { useFields } from "../../context/FieldContext";
+import Astroboys from "../../assets/astroboys.jpg";
+import { uploadImageToCloudinary } from "../../services/CloudinaryService";
 
 export const GroupPage = () => {
   const [open, setOpen] = useState(false);

@@ -1,8 +1,8 @@
 import React, { useRef, useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
-import { useUsers } from "../context/UserContext";
+import { useUsers } from "../../context/UserContext";
 import moment from "moment/moment";
-import { uploadImageToCloudinary } from "../services/CloudinaryService";
+import { uploadImageToCloudinary } from "../../services/CloudinaryService";
 
 export const SettingsPage = () => {
   const { currentUser, setCurrentUser, updateUser } = useUsers();

@@ -16,19 +16,19 @@ import SignupPage from "./pages/SignupPage";
 import ForgotPass from "./pages/ForgotPass";
 import ErrorPage from "./pages/ErrorPage";
 
-import DashboardPage from "./components/DashboardPage";
-import GroupPage from "./components/GroupPage";
+import DashboardPage from "./components/components/DashboardPage";
+import GroupPage from "./components/components/GroupPage";
 import PlaneacionesPage from "./components/Planeaciones/PlaneacionesPage";
 import Cards from "./components/Planeaciones/components/Cards";
-import CursosPage from "./components/CursosPage";
+import CursosPage from "./components/components/CursosPage";
 //
 import CursoUno from "./components/Cursos/CursoUno";
 import CursoDos from "./components/Cursos/CursoDos";
 import CursoTres from "./components/Cursos/CursoTres";
 //
-import PatrocinadoresPage from "./components/PatrocinadoresPage";
-import CalendarPage from "./components/CalendarPage";
-import SettingPage from "./components/SettingsPage";
+import PatrocinadoresPage from "./components/components/PatrocinadoresPage";
+import CalendarPage from "./components/components/CalendarPage";
+import SettingPage from "./components/components/SettingsPage";
 import MainPage from "./pages/MainPage/MainPage";
 
 import { UserProvider } from "./context/UserContext";

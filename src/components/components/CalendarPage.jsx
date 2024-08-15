@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef  } from "react";
 import { useForm } from "react-hook-form";
 import FullCalendar from "@fullcalendar/react";
 import dayGridPlugin from "@fullcalendar/daygrid";
-import { useEvents } from "../context/EventContext";
+import { useEvents } from "../../context/EventContext";
 import { FloatButton, Modal } from "antd";
 import moment from 'moment';
 
